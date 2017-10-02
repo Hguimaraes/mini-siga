@@ -22,9 +22,9 @@
 	Ficou decidido na reunião que deve ser ignorado os casos de disciplinas de linhas de pesquisa diferentes da do aluno e de disciplinas com pré-requisitos.
 	A reunião durou em média duas horas, e o Stakeholder se mostrou muito solicito durante toda ela. Ele também disponibilizou seus endereços de email, caso surja alguma nova dúvida em relação ao sistema:
 
-		*_ Andrebrito@cos.ufrj.br _
-		*_ Andrebrito.ufrj@gmail.com _
-
+		* Andrebrito@cos.ufrj.br
+		* Andrebrito.ufrj@gmail.com
+		
 5. Itens de Ação
 	Deverão ser realizados os seguintes itens, preferencialmente na ordem proposta:
 	1. Elaboração do Plano de Projeto (EAP).
