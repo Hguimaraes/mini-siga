@@ -30,7 +30,7 @@
 
 	O sistema também deverá permitir que um aluno recupere a lista de todas as disciplinas que serão ofertadas naquele trimestre e escolha as disciplinas nas quais ele vai se inscrever. Além disso, o aluno também poderá excluir a inscrição em uma determinada disciplina e visualizar todas as disciplinas nas quais ele se inscreveu naquele trimestre.
 
-	Da mesma forma, o sistema deverá permitir que professores lancem as notas de um determinado aluno, que podem variar de A a D. Para que um aluno seja aprovado em determinada disciplina, ele deve alcançar no mínimo nota C em uma determinada disciplina.
+	Da mesma forma, o sistema deverá permitir que funcionários (professores ou a secretaria) lancem as notas de um determinado aluno, que podem variar de A a D. Para que um aluno seja aprovado em determinada disciplina, ele deve alcançar no mínimo nota C em uma determinada disciplina.
 
 	Um aluno não poderá se inscrever em nenhuma disciplina na qual já tenha sido aprovado. Caso um aluno reprove uma disciplina, ele obrigatoriamente deverá cursá-la novamente. Caso ele reprove a disciplina novamente, o sistema deverá informar à secretaria que aquele aluno está em condição de jubilamento.
 
