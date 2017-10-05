@@ -1,38 +1,12 @@
 # Documento de Especificação de Requisitos
 
-<table>
-    <tr>
-        <td>
-        	<strong>Nome do Projeto:</strong>
-        	<br>
-        	Sistema de Gerenciamento de Disciplinas
-        </td>
-        <td>
-        	<strong>Data de Solicitação:</strong>
-        	<br>
-        	18/09/2017
-        </td>
-    </tr>
-    <tr>
-    	<td colspan="2">
-        	<strong>Responsáveis:</strong>
-        	<br>
-        	Brian Confessor, Heitor Guimarães, Igor Amaral, Marcelo Mastrelli
-        </td>
-    </tr>
-    <tr>
-    	<td>
-        	<strong>Solicitante:</strong>
-        	<br>
-        	Toacy Cavalcante de Oliveira
-        </td>
-        <td>
-        	<strong>Cliente:</strong>
-        	<br>
-        	Toacy Cavalcante de Oliveira
-        </td>
-    </tr>
-</table>
+| **Nome do Projeto:** | Sistema de Gerenciamento de Disciplinas |
+| ----- | ----- |
+| **Data de Solicitação:** | 18/09/2017 |
+| **Responsáveis:** | Brian Confessor, Heitor Guimarães, Igor Amaral, Marcelo Mastrelli |
+| **Solicitante:** | André Brito |
+| **Cliente:** | Toacy Cavalcante de Oliveira |
+
 
 ## Versões e Revisões deste documento
 
@@ -66,3 +40,23 @@
 2. **Requisitos do Sistema/Software**
 
 	1. **Requisitos Funcionais (RF):**
+
+	| Código | Descrição do Requisito Funcional | Situação | Prioridade |
+	| ----- | ----- | ----- | ----- |
+	| RF01 | O sistema deve permitir que o usuário Funcionário crie uma nova disciplina. | Proposto | Alta |
+	| RF02 | O sistema deve permitir que o usuário Funcionário altere os dados de uma disciplina já cadastrada no sistema, ou a exclua| Proposto | Alta |
+	| RF03 | O sistema deve permitir que o usuário Funcionário crie uma turma de uma determinada disciplina. | Proposto | Alta |
+	| RF04 | O sistema deve permitir que o usuário Funcionário edite uma turma existente | Proposto | Alta |
+	| RF05 | O sistema deve permitir que uma turma cujas aulas não tenham sido iniciadas seja excluídas por um usuário Funcionário. | Proposto | Alta |
+	| RF06 | O sistema deve permitir que os usuário Aluno visualize a listagem de turmas disponíveis no período de inscrição em disciplinas | Proposto | Alta |
+	| RF07 | O sistema deve permitir que o usuário Aluno possa realizar a inscrição em uma turma de uma determinada disciplina com vagas disponíveis durante o período de inscrição em disciplinas[a]. | Proposto | Alta |
+	| RF08 | O sistema deve permitir que o usuário Aluno tranque sua inscrição em uma turma durante o período de trancamento de disciplinas[b]. | Proposto | Alta |
+	| RF09 | O sistema deve permitir que o usuário Funcionário possa realizar o lançamento de notas para cada Aluno inscrito em uma determinada turma. | Proposto | Alta |
+	| RF10 | O sistema deve permitir que o usuário Funcionário inscreva os Alunos diretamente nas turmas independente do período de inscrição em disciplinas[a]. | Proposto | Média |
+	| RF11 | O sistema deve permitir que o usuário Funcionário tranque a inscrição em uma turma de qualquer aluno diretamente, independente do Período de Trancamento de Disciplinas[b]. | Proposto | Média
+	| RF12 | O sistema deve permitir que o usuário Funcionário estipule os períodos de inscrição e trancamento de disciplinas[a][b]. | Proposto | Alta |
+	| RF13 | O sistema deve notificar o usuário Aluno quando ele realizar inscrição ou trancamento em uma turma. | Proposto | Média |
+	| RF14 | O sistema deve notificar o usuário Aluno quando uma turma na qual ele estiver inscrito seja excluída do sistema. | Proposto | Média |
+
+	2. **Requisitos Não-Funcionais (RNF)**
+	
