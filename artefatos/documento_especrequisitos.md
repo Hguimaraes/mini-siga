@@ -7,15 +7,6 @@
 | **Solicitante:** | André Brito |
 | **Cliente:** | Toacy Cavalcante de Oliveira |
 
-
-## Versões e Revisões deste documento
-
-| Data | Comentário | Autor | Versão |
-| ----- | ----- | ----- | -----|
-| 27/09/2017 | Levantamento de requisitos após primeira conversa com stakeholder | Brian, Heitor, Igor e Marcelo | 1.0 |
-| 02/10/2017 | Elaboração inicial dos requisitos | Brian, Heitor, Igor e Marcelo | 1.1 |
-| 04/10/2017 | Correção de requisitos funcionais e não funcionais após conversa com o QA | Brian, Heitor, Igor e Marcelo | 1.2 |
-
 1. **Introdução**
 
 	O objetivo deste documento é de definir claramente, acordado bilateralmente entre o gerente e o stakeholder, quais são os requisitos funcionais e não funcionais do sistema proposto. Também é importante ressaltar os usuários envolvidos para a utilização do sistema de gerenciamento de disciplinas de pós-graduação da COPPE. 
@@ -57,7 +48,7 @@
 	| RF12 | O sistema deve permitir que o usuário Funcionário estipule os períodos de inscrição e trancamento de disciplinas. | Proposto | Alta |
 	| RF13 | O sistema deve notificar o usuário Aluno quando ele realizar inscrição ou trancamento em uma turma. | Proposto | Média |
 	| RF14 | O sistema deve notificar o usuário Aluno quando uma turma na qual ele estiver inscrito seja excluída do sistema. | Proposto | Média |
-	| RF15 | O sistema deve notificar o usuário Aluno quando o mesmo reprovar uma disciplina | Proposto | Média |
+	| RF15 | O sistema deve permitir que o usuário realize autenticação (Login) para usar suas funcionalidades | Proposto | Alta |
 
 	2. **Requisitos Não-Funcionais (RNF)**
 
