@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "br.ufrj.cos.minisiga",
+      "nativeLanguage": "pt-br"
+    },
+    "jhipsterVersion": "4.6.2",
+    "baseName": "minisiga",
+    "packageName": "br.ufrj.cos.minisiga",
+    "packageFolder": "br/ufrj/cos/minisiga",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSocialSignIn": false,
+    "jwtSecretKey": "1e6eb689d08605f9b83df8ae9a305a8cac5a5646",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "yarn",
+    "applicationType": "monolith",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "pt-br",
+    "languages": [
+      "pt-br"
+    ]
+  }
+}

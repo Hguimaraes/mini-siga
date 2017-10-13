@@ -1,0 +1,14 @@
+version: '2'
+services:
+    minisiga-app:
+        image: minisiga
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://minisiga-postgresql:5432/minisiga
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    minisiga-postgresql:
+        extends:
+            file: postgresql.yml
+            service: minisiga-postgresql
