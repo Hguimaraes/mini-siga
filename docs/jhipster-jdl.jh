@@ -1,0 +1,72 @@
+entity Aluno {
+	cpf String required
+    dre String required
+}
+
+entity Funcionario {
+	cpf String required
+    siap String required
+}
+
+entity Disciplina {
+	codigo String required
+    nome String required
+    qtdCreditos Integer required
+    cargaHoraria Integer required
+}
+
+entity Turma {
+    maxInscritos Integer required
+    sala String required
+}
+
+entity Horario {
+	dia LocalDate required
+    horaInicio Instant required
+    horaFim Instant required
+    descExtenso String required
+}
+
+entity ListaEsperaAlocacao {
+	data ZonedDateTime required
+}
+
+enum CONCEITO{
+	A,
+    B,
+    C,
+    D
+}
+
+entity Nota {
+	conceito CONCEITO required
+}
+
+entity Calendario {
+	periodo String required
+    iniPeriodo ZonedDateTime required
+    fimPeriodo ZonedDateTime required
+    iniInscDisc ZonedDateTime required
+    fimInsDisc ZonedDateTime required
+    iniTrancDisc ZonedDateTime required
+    fimTrancDisc ZonedDateTime required
+}
+
+relationship OneToOne {
+	Turma{professor(siap)} to Funcionario,
+    Aluno{user(login)} to User{user},
+    Funcionario{user(login)} to User{user},
+    Nota{aluno(dre)} to Aluno{aluno},
+    ListaEsperaAlocacao{aluno(dre)} to Aluno{aluno}
+}
+
+relationship OneToMany {
+	Disciplina{turmas} to Turma{disciplina(codigo)},
+    Turma{nota} to Nota{turma},
+    Turma{listaespera} to ListaEsperaAlocacao{turma}
+}
+
+relationship ManyToMany {
+	Turma{inscritos} to Aluno{turmas},
+    Horario{turma} to Turma{horario(descExtenso)}
+}
