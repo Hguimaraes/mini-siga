@@ -1,0 +1,47 @@
+
+<div *ngIf="turma">
+    <h2><span jhiTranslate="minisigaApp.turma.detail.title">Turma</span> {{turma.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="minisigaApp.turma.maxInscritos">Max Inscritos</span></dt>
+        <dd>
+            <span>{{turma.maxInscritos}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.turma.sala">Sala</span></dt>
+        <dd>
+            <span>{{turma.sala}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.turma.professor">Professor</span></dt>
+        <dd>
+            <div *ngIf="turma.professor">
+                <a [routerLink]="['/funcionario', turma.professor?.id]">{{turma.professor?.siap}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.turma.inscritos">Inscritos</span></dt>
+        <dd>
+            <span *ngFor="let inscritos of turma.inscritos; let last = last">
+                <a [routerLink]="['/aluno', inscritos?.id ]">{{inscritos.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.turma.disciplina">Disciplina</span></dt>
+        <dd>
+            <div *ngIf="turma.disciplina">
+                <a [routerLink]="['/disciplina', turma.disciplina?.id]">{{turma.disciplina?.codigo}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'turma/'+ turma.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

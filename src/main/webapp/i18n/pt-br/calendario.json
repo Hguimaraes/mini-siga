@@ -1,0 +1,27 @@
+{
+    "minisigaApp": {
+        "calendario" : {
+            "home": {
+                "title": "Calendarios",
+                "createLabel": "Criar novo Calendario",
+                "createOrEditLabel": "Criar ou editar Calendario"
+            },
+            "created": "Um novo Calendario foi criado com o identificador {{ param }}",
+            "updated": "Um Calendario foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Calendario foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Calendario {{ id }}?"
+            },
+            "detail": {
+                "title": "Calendario"
+            },
+            "periodo": "Periodo",
+            "iniPeriodo": "Ini Periodo",
+            "fimPeriodo": "Fim Periodo",
+            "iniInscDisc": "Ini Insc Disc",
+            "fimInsDisc": "Fim Ins Disc",
+            "iniTrancDisc": "Ini Tranc Disc",
+            "fimTrancDisc": "Fim Tranc Disc"
+        }
+    }
+}

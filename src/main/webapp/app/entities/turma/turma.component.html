@@ -1,0 +1,76 @@
+<div>
+    <h2>
+        <span jhiTranslate="minisigaApp.turma.home.title">Turmas</span>
+        <button class="btn btn-primary float-right jh-create-entity create-turma" [routerLink]="['/', { outlets: { popup: ['turma-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="minisigaApp.turma.home.createLabel">
+            Create new Turma
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="turmas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="minisigaApp.turma.maxInscritos">Max Inscritos</span></th>
+            <th><span jhiTranslate="minisigaApp.turma.sala">Sala</span></th>
+            <th><span jhiTranslate="minisigaApp.turma.professor">Professor</span></th>
+            <th><span jhiTranslate="minisigaApp.turma.inscritos">Inscritos</span></th>
+            <th><span jhiTranslate="minisigaApp.turma.disciplina">Disciplina</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let turma of turmas ;trackBy: trackId">
+                <td><a [routerLink]="['../turma', turma.id ]">{{turma.id}}</a></td>
+                <td>{{turma.maxInscritos}}</td>
+                <td>{{turma.sala}}</td>
+                <td>
+                    <div *ngIf="turma.professor">
+                        <a [routerLink]="['../funcionario', turma.professor?.id ]" >{{turma.professor?.siap}}</a>
+                    </div>
+                </td>
+                <td>
+                    <span *ngFor="let inscritos of turma.inscritos; let last = last">
+                            <a class="form-control-static" [routerLink]="['../aluno', inscritos?.id ]">{{inscritos.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <div *ngIf="turma.disciplina">
+                        <a [routerLink]="['../disciplina', turma.disciplina?.id ]" >{{turma.disciplina?.codigo}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../turma', turma.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'turma/'+ turma.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'turma/'+ turma.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

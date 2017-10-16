@@ -1,0 +1,55 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "user"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "aluno",
+            "otherEntityName": "nota",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "aluno"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "aluno",
+            "otherEntityName": "listaEsperaAlocacao",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "aluno"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "turmas",
+            "otherEntityName": "turma",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "inscritos"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "cpf",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171016020345",
+    "entityTableName": "aluno",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
