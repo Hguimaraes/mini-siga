@@ -32,6 +32,8 @@
 
 	1. **Modelo GQ(I)M:**
 
+	![Imagem do Modelo GQ(I)M](imgs/MED001.png "Modelo GQ(I)M")
+	![Legenda do Modelo GQ(I)M](imgs/MED002.png "Legenda do Modelo GQ(I)M")
 
 	2. **Definição operacional de indicadores e respectivas medidas:**
 
