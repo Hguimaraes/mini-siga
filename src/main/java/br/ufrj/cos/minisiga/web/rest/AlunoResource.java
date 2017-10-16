@@ -95,13 +95,6 @@ public class AlunoResource {
                 .filter(aluno -> aluno.getAluno() == null)
                 .collect(Collectors.toList());
         }
-        if ("aluno-is-null".equals(filter)) {
-            log.debug("REST request to get all Alunos where aluno is null");
-            return StreamSupport
-                .stream(alunoRepository.findAll().spliterator(), false)
-                .filter(aluno -> aluno.getAluno() == null)
-                .collect(Collectors.toList());
-        }
         log.debug("REST request to get all Alunos");
         return alunoRepository.findAll();
     }

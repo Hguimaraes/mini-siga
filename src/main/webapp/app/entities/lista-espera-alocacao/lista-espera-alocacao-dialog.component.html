@@ -34,7 +34,7 @@
             <label jhiTranslate="minisigaApp.listaEsperaAlocacao.aluno" for="field_aluno">Aluno</label>
             <select class="form-control" id="field_aluno" name="aluno" [(ngModel)]="listaEsperaAlocacao.aluno">
                 <option [ngValue]="null"></option>
-                <option [ngValue]="alunoOption.id === listaEsperaAlocacao.aluno?.id ? listaEsperaAlocacao.aluno : alunoOption" *ngFor="let alunoOption of alunos; trackBy: trackAlunoById">{{alunoOption.dre}}</option>
+                <option [ngValue]="alunoOption.id === listaEsperaAlocacao.aluno?.id ? listaEsperaAlocacao.aluno : alunoOption" *ngFor="let alunoOption of alunos; trackBy: trackAlunoById">{{alunoOption.id}}</option>
             </select>
         </div>
         <div class="form-group">

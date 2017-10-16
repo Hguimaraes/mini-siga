@@ -57,7 +57,7 @@ relationship OneToOne {
     Aluno{user(login)} to User{user},
     Funcionario{user(login)} to User{user},
     Nota{aluno(dre)} to Aluno{aluno},
-    ListaEsperaAlocacao{aluno(dre)} to Aluno{aluno}
+    ListaEsperaAlocacao{aluno} to Aluno
 }
 
 relationship OneToMany {

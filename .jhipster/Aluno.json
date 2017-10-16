@@ -17,13 +17,6 @@
             "otherEntityRelationshipName": "aluno"
         },
         {
-            "relationshipType": "one-to-one",
-            "relationshipName": "aluno",
-            "otherEntityName": "listaEsperaAlocacao",
-            "ownerSide": false,
-            "otherEntityRelationshipName": "aluno"
-        },
-        {
             "relationshipType": "many-to-many",
             "relationshipName": "turmas",
             "otherEntityName": "turma",

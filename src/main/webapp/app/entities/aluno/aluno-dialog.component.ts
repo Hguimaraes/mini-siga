@@ -11,7 +11,6 @@ import { AlunoPopupService } from './aluno-popup.service';
 import { AlunoService } from './aluno.service';
 import { User, UserService } from '../../shared';
 import { Nota, NotaService } from '../nota';
-import { ListaEsperaAlocacao, ListaEsperaAlocacaoService } from '../lista-espera-alocacao';
 import { Turma, TurmaService } from '../turma';
 import { ResponseWrapper } from '../../shared';
 
@@ -28,8 +27,6 @@ export class AlunoDialogComponent implements OnInit {
 
     notas: Nota[];
 
-    listaesperaalocacaos: ListaEsperaAlocacao[];
-
     turmas: Turma[];
 
     constructor(
@@ -38,7 +35,6 @@ export class AlunoDialogComponent implements OnInit {
         private alunoService: AlunoService,
         private userService: UserService,
         private notaService: NotaService,
-        private listaEsperaAlocacaoService: ListaEsperaAlocacaoService,
         private turmaService: TurmaService,
         private eventManager: JhiEventManager
     ) {
@@ -50,8 +46,6 @@ export class AlunoDialogComponent implements OnInit {
             .subscribe((res: ResponseWrapper) => { this.users = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
         this.notaService.query()
             .subscribe((res: ResponseWrapper) => { this.notas = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
-        this.listaEsperaAlocacaoService.query()
-            .subscribe((res: ResponseWrapper) => { this.listaesperaalocacaos = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
         this.turmaService.query()
             .subscribe((res: ResponseWrapper) => { this.turmas = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
@@ -101,10 +95,6 @@ export class AlunoDialogComponent implements OnInit {
     }
 
     trackNotaById(index: number, item: Nota) {
-        return item.id;
-    }
-
-    trackListaEsperaAlocacaoById(index: number, item: ListaEsperaAlocacao) {
         return item.id;
     }
 

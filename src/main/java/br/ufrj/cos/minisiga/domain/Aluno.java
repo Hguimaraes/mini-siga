@@ -42,10 +42,6 @@ public class Aluno implements Serializable {
     @JsonIgnore
     private Nota aluno;
 
-    @OneToOne(mappedBy = "aluno")
-    @JsonIgnore
-    private ListaEsperaAlocacao aluno;
-
     @ManyToMany(mappedBy = "inscritos")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -109,19 +105,6 @@ public class Aluno implements Serializable {
 
     public void setAluno(Nota nota) {
         this.aluno = nota;
-    }
-
-    public ListaEsperaAlocacao getAluno() {
-        return aluno;
-    }
-
-    public Aluno aluno(ListaEsperaAlocacao listaEsperaAlocacao) {
-        this.aluno = listaEsperaAlocacao;
-        return this;
-    }
-
-    public void setAluno(ListaEsperaAlocacao listaEsperaAlocacao) {
-        this.aluno = listaEsperaAlocacao;
     }
 
     public Set<Turma> getTurmas() {

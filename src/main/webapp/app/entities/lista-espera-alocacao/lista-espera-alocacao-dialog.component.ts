@@ -39,7 +39,7 @@ export class ListaEsperaAlocacaoDialogComponent implements OnInit {
     ngOnInit() {
         this.isSaving = false;
         this.alunoService
-            .query({filter: 'aluno-is-null'})
+            .query({filter: 'listaesperaalocacao-is-null'})
             .subscribe((res: ResponseWrapper) => {
                 if (!this.listaEsperaAlocacao.aluno || !this.listaEsperaAlocacao.aluno.id) {
                     this.alunos = res.json;

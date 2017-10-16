@@ -29,7 +29,7 @@
                 <td>{{listaEsperaAlocacao.data | date:'medium'}}</td>
                 <td>
                     <div *ngIf="listaEsperaAlocacao.aluno">
-                        <a [routerLink]="['../aluno', listaEsperaAlocacao.aluno?.id ]" >{{listaEsperaAlocacao.aluno?.dre}}</a>
+                        <a [routerLink]="['../aluno', listaEsperaAlocacao.aluno?.id ]" >{{listaEsperaAlocacao.aluno?.id}}</a>
                     </div>
                 </td>
                 <td>

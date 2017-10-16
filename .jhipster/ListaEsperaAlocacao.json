@@ -5,9 +5,9 @@
             "relationshipType": "one-to-one",
             "relationshipName": "aluno",
             "otherEntityName": "aluno",
-            "otherEntityField": "dre",
+            "otherEntityField": "id",
             "ownerSide": true,
-            "otherEntityRelationshipName": "aluno"
+            "otherEntityRelationshipName": "listaEsperaAlocacao"
         },
         {
             "relationshipType": "many-to-one",
