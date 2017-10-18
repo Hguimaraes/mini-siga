@@ -1,0 +1,68 @@
+<div>
+    <h2>
+        <span jhiTranslate="minisigaApp.calendario.home.title">Calendarios</span>
+        <button class="btn btn-primary float-right jh-create-entity create-calendario" [routerLink]="['/', { outlets: { popup: ['calendario-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="minisigaApp.calendario.home.createLabel">
+            Create new Calendario
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="calendarios">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="minisigaApp.calendario.periodo">Periodo</span></th>
+            <th><span jhiTranslate="minisigaApp.calendario.iniPeriodo">Ini Periodo</span></th>
+            <th><span jhiTranslate="minisigaApp.calendario.fimPeriodo">Fim Periodo</span></th>
+            <th><span jhiTranslate="minisigaApp.calendario.iniInscDisc">Ini Insc Disc</span></th>
+            <th><span jhiTranslate="minisigaApp.calendario.fimInsDisc">Fim Ins Disc</span></th>
+            <th><span jhiTranslate="minisigaApp.calendario.iniTrancDisc">Ini Tranc Disc</span></th>
+            <th><span jhiTranslate="minisigaApp.calendario.fimTrancDisc">Fim Tranc Disc</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let calendario of calendarios ;trackBy: trackId">
+                <td><a [routerLink]="['../calendario', calendario.id ]">{{calendario.id}}</a></td>
+                <td>{{calendario.periodo}}</td>
+                <td>{{calendario.iniPeriodo | date:'medium'}}</td>
+                <td>{{calendario.fimPeriodo | date:'medium'}}</td>
+                <td>{{calendario.iniInscDisc | date:'medium'}}</td>
+                <td>{{calendario.fimInsDisc | date:'medium'}}</td>
+                <td>{{calendario.iniTrancDisc | date:'medium'}}</td>
+                <td>{{calendario.fimTrancDisc | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../calendario', calendario.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'calendario/'+ calendario.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'calendario/'+ calendario.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

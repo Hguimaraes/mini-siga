@@ -1,0 +1,67 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "professor",
+            "otherEntityName": "funcionario",
+            "otherEntityField": "siap",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "turma"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "nota",
+            "otherEntityName": "nota",
+            "otherEntityRelationshipName": "turma"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "listaespera",
+            "otherEntityName": "listaEsperaAlocacao",
+            "otherEntityRelationshipName": "turma"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "turmas",
+            "relationshipName": "inscritos",
+            "otherEntityName": "aluno",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "disciplina",
+            "otherEntityName": "disciplina",
+            "otherEntityField": "codigo"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "horario",
+            "otherEntityName": "horario",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "turma"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "maxInscritos",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sala",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171016020348",
+    "entityTableName": "turma",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

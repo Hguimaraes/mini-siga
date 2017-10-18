@@ -1,0 +1,310 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hguimaraes (generated)" id="1508290175357-1">
+        <createSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-2">
+        <createTable tableName="aluno">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="alunoPK"/>
+            </column>
+            <column name="cpf" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dre" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-3">
+        <createTable tableName="calendario">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="calendarioPK"/>
+            </column>
+            <column name="fim_ins_disc" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fim_periodo" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fim_tranc_disc" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ini_insc_disc" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ini_periodo" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ini_tranc_disc" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="periodo" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-4">
+        <createTable tableName="disciplina">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="disciplinaPK"/>
+            </column>
+            <column name="carga_horaria" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="codigo" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nome" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qtd_creditos" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-5">
+        <createTable tableName="funcionario">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="funcionarioPK"/>
+            </column>
+            <column name="cpf" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="siap" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-6">
+        <createTable tableName="horario">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="horarioPK"/>
+            </column>
+            <column name="desc_extenso" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dia" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hora_fim" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hora_inicio" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-7">
+        <createTable tableName="horario_turma">
+            <column name="horarios_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="turmas_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-8">
+        <createTable tableName="jhi_authority">
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-9">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="TIMESTAMP"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-10">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-11">
+        <createTable tableName="jhi_user">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_userPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="TIMESTAMP"/>
+            <column name="activated" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activation_key" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(100)"/>
+            <column name="first_name" type="VARCHAR(50)"/>
+            <column name="image_url" type="VARCHAR(256)"/>
+            <column name="lang_key" type="VARCHAR(5)"/>
+            <column name="last_name" type="VARCHAR(50)"/>
+            <column name="login" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password_hash" type="VARCHAR(60)"/>
+            <column name="reset_date" type="TIMESTAMP"/>
+            <column name="reset_key" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-12">
+        <createTable tableName="jhi_user_authority">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="authority_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-13">
+        <createTable tableName="lista_espera_alocacao">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="lista_espera_alocacaoPK"/>
+            </column>
+            <column name="data" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="aluno_id" type="BIGINT"/>
+            <column name="turma_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-14">
+        <createTable tableName="nota">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="notaPK"/>
+            </column>
+            <column name="conceito" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="aluno_id" type="BIGINT"/>
+            <column name="turma_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-15">
+        <createTable tableName="turma">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="turmaPK"/>
+            </column>
+            <column name="max_inscritos" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sala" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="disciplina_id" type="BIGINT"/>
+            <column name="professor_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-16">
+        <createTable tableName="turma_inscritos">
+            <column name="turmas_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="inscritos_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-17">
+        <addPrimaryKey columnNames="horarios_id, turmas_id" tableName="horario_turma"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-18">
+        <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-19">
+        <addPrimaryKey columnNames="user_id, authority_name" tableName="jhi_user_authority"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-20">
+        <addPrimaryKey columnNames="turmas_id, inscritos_id" tableName="turma_inscritos"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-21">
+        <addPrimaryKey columnNames="name" constraintName="jhi_authorityPK" tableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-22">
+        <addUniqueConstraint columnNames="user_id" constraintName="UC_ALUNOUSER_ID_COL" tableName="aluno"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-23">
+        <addUniqueConstraint columnNames="user_id" constraintName="UC_FUNCIONARIOUSER_ID_COL" tableName="funcionario"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-24">
+        <addUniqueConstraint columnNames="email" constraintName="UC_JHI_USEREMAIL_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-25">
+        <addUniqueConstraint columnNames="login" constraintName="UC_JHI_USERLOGIN_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-26">
+        <addUniqueConstraint columnNames="aluno_id" constraintName="UC_LISTA_ESPERA_ALOCACAOALUNO_ID_COL" tableName="lista_espera_alocacao"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-27">
+        <addUniqueConstraint columnNames="aluno_id" constraintName="UC_NOTAALUNO_ID_COL" tableName="nota"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-28">
+        <addUniqueConstraint columnNames="professor_id" constraintName="UC_TURMAPROFESSOR_ID_COL" tableName="turma"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-29">
+        <addForeignKeyConstraint baseColumnNames="professor_id" baseTableName="turma" constraintName="FK1j45k74mxejifm7qtjyii3rru" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="funcionario"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-30">
+        <addForeignKeyConstraint baseColumnNames="turma_id" baseTableName="lista_espera_alocacao" constraintName="FK1v57i8vo3r38x33m0lnwftkro" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="turma"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-31">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="funcionario" constraintName="FK213sxv3j7xtqr57j8jd4aqnyo" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-32">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_user_authority" constraintName="FK290okww5jujghp4el5i7mgwu0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-33">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-34">
+        <addForeignKeyConstraint baseColumnNames="authority_name" baseTableName="jhi_user_authority" constraintName="FK4psxl0jtx6nr7rhqbynr6itoc" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-35">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="aluno" constraintName="FK54p79aucs51lope8b5pbgl7ns" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-36">
+        <addForeignKeyConstraint baseColumnNames="aluno_id" baseTableName="nota" constraintName="FK7ntsgem4ql46uy34ile14rg74" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="aluno"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-37">
+        <addForeignKeyConstraint baseColumnNames="aluno_id" baseTableName="lista_espera_alocacao" constraintName="FK809tovjsljuet1qw3d81xwew1" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="aluno"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-38">
+        <addForeignKeyConstraint baseColumnNames="inscritos_id" baseTableName="turma_inscritos" constraintName="FK92cnxw2c4uj1846w53awt9g69" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="aluno"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-39">
+        <addForeignKeyConstraint baseColumnNames="horarios_id" baseTableName="horario_turma" constraintName="FK9p0isqyw7rmy4duu6sv6o7b1o" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="horario"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-40">
+        <addForeignKeyConstraint baseColumnNames="turmas_id" baseTableName="turma_inscritos" constraintName="FKe8dw2j974abosc8n0v7nhnwun" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="turma"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-41">
+        <addForeignKeyConstraint baseColumnNames="disciplina_id" baseTableName="turma" constraintName="FKeee13bbo1a87bo2i3bxxwvegm" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="disciplina"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-42">
+        <addForeignKeyConstraint baseColumnNames="turmas_id" baseTableName="horario_turma" constraintName="FKk3sb7fv2q11cxlf1yoe0hgabw" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="turma"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1508290175357-43">
+        <addForeignKeyConstraint baseColumnNames="turma_id" baseTableName="nota" constraintName="FKmshu1m3ey32tpifb5wdsj9s7q" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="turma"/>
+    </changeSet>
+</databaseChangeLog>

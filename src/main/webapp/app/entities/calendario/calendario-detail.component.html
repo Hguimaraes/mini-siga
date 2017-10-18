@@ -1,0 +1,49 @@
+
+<div *ngIf="calendario">
+    <h2><span jhiTranslate="minisigaApp.calendario.detail.title">Calendario</span> {{calendario.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="minisigaApp.calendario.periodo">Periodo</span></dt>
+        <dd>
+            <span>{{calendario.periodo}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.calendario.iniPeriodo">Ini Periodo</span></dt>
+        <dd>
+            <span>{{calendario.iniPeriodo | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.calendario.fimPeriodo">Fim Periodo</span></dt>
+        <dd>
+            <span>{{calendario.fimPeriodo | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.calendario.iniInscDisc">Ini Insc Disc</span></dt>
+        <dd>
+            <span>{{calendario.iniInscDisc | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.calendario.fimInsDisc">Fim Ins Disc</span></dt>
+        <dd>
+            <span>{{calendario.fimInsDisc | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.calendario.iniTrancDisc">Ini Tranc Disc</span></dt>
+        <dd>
+            <span>{{calendario.iniTrancDisc | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.calendario.fimTrancDisc">Fim Tranc Disc</span></dt>
+        <dd>
+            <span>{{calendario.fimTrancDisc | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'calendario/'+ calendario.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

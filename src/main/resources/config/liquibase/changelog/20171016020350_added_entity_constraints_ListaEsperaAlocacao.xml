@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ListaEsperaAlocacao.
+    -->
+    <changeSet id="20171016020350-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="aluno_id"
+                                 baseTableName="lista_espera_alocacao"
+                                 constraintName="fk_lista_espera_alocacao_aluno_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aluno"/>
+
+        <addForeignKeyConstraint baseColumnNames="turma_id"
+                                 baseTableName="lista_espera_alocacao"
+                                 constraintName="fk_lista_espera_alocacao_turma_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="turma"/>
+
+    </changeSet>
+</databaseChangeLog>

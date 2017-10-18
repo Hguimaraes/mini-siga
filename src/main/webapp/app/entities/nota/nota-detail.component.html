@@ -1,0 +1,37 @@
+
+<div *ngIf="nota">
+    <h2><span jhiTranslate="minisigaApp.nota.detail.title">Nota</span> {{nota.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="minisigaApp.nota.conceito">Conceito</span></dt>
+        <dd>
+            <span jhiTranslate="{{'minisigaApp.CONCEITO.' + nota.conceito}}">{{nota.conceito}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.nota.aluno">Aluno</span></dt>
+        <dd>
+            <div *ngIf="nota.aluno">
+                <a [routerLink]="['/aluno', nota.aluno?.id]">{{nota.aluno?.dre}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.nota.turma">Turma</span></dt>
+        <dd>
+            <div *ngIf="nota.turma">
+                <a [routerLink]="['/turma', nota.turma?.id]">{{nota.turma?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'nota/'+ nota.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

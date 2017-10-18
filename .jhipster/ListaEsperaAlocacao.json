@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "aluno",
+            "otherEntityName": "aluno",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "listaEsperaAlocacao"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "turma",
+            "otherEntityName": "turma",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171016020350",
+    "entityTableName": "lista_espera_alocacao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

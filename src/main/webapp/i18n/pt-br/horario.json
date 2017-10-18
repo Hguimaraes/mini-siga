@@ -1,0 +1,25 @@
+{
+    "minisigaApp": {
+        "horario" : {
+            "home": {
+                "title": "Horarios",
+                "createLabel": "Criar novo Horario",
+                "createOrEditLabel": "Criar ou editar Horario"
+            },
+            "created": "Um novo Horario foi criado com o identificador {{ param }}",
+            "updated": "Um Horario foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Horario foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Horario {{ id }}?"
+            },
+            "detail": {
+                "title": "Horario"
+            },
+            "dia": "Dia",
+            "horaInicio": "Hora Inicio",
+            "horaFim": "Hora Fim",
+            "descExtenso": "Desc Extenso",
+            "turma": "Turma"
+        }
+    }
+}

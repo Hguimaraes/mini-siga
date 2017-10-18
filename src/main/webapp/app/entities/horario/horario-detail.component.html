@@ -1,0 +1,43 @@
+
+<div *ngIf="horario">
+    <h2><span jhiTranslate="minisigaApp.horario.detail.title">Horario</span> {{horario.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="minisigaApp.horario.dia">Dia</span></dt>
+        <dd>
+            <span jhiTranslate="{{'minisigaApp.DIAS.' + horario.dia}}">{{horario.dia}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.horario.horaInicio">Hora Inicio</span></dt>
+        <dd>
+            <span>{{horario.horaInicio | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.horario.horaFim">Hora Fim</span></dt>
+        <dd>
+            <span>{{horario.horaFim | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.horario.descExtenso">Desc Extenso</span></dt>
+        <dd>
+            <span>{{horario.descExtenso}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.horario.turma">Turma</span></dt>
+        <dd>
+            <span *ngFor="let turma of horario.turmas; let last = last">
+                <a [routerLink]="['/turma', turma?.id ]">{{turma.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'horario/'+ horario.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

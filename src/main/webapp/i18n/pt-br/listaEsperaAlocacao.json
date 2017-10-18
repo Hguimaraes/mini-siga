@@ -1,0 +1,23 @@
+{
+    "minisigaApp": {
+        "listaEsperaAlocacao" : {
+            "home": {
+                "title": "Lista Espera Alocacaos",
+                "createLabel": "Criar novo Lista Espera Alocacao",
+                "createOrEditLabel": "Criar ou editar Lista Espera Alocacao"
+            },
+            "created": "Um novo Lista Espera Alocacao foi criado com o identificador {{ param }}",
+            "updated": "Um Lista Espera Alocacao foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Lista Espera Alocacao foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Lista Espera Alocacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Lista Espera Alocacao"
+            },
+            "data": "Data",
+            "aluno": "Aluno",
+            "turma": "Turma"
+        }
+    }
+}

@@ -1,0 +1,77 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myDisciplinaLabel" jhiTranslate="minisigaApp.disciplina.home.createOrEditLabel">Create or edit a Disciplina</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!disciplina.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="disciplina.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="minisigaApp.disciplina.codigo" for="field_codigo">Codigo</label>
+            <input type="text" class="form-control" name="codigo" id="field_codigo"
+                [(ngModel)]="disciplina.codigo" required />
+            <div [hidden]="!(editForm.controls.codigo?.dirty && editForm.controls.codigo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.codigo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="minisigaApp.disciplina.nome" for="field_nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="field_nome"
+                [(ngModel)]="disciplina.nome" required />
+            <div [hidden]="!(editForm.controls.nome?.dirty && editForm.controls.nome?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nome?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="minisigaApp.disciplina.qtdCreditos" for="field_qtdCreditos">Qtd Creditos</label>
+            <input type="number" class="form-control" name="qtdCreditos" id="field_qtdCreditos"
+                [(ngModel)]="disciplina.qtdCreditos" required />
+            <div [hidden]="!(editForm.controls.qtdCreditos?.dirty && editForm.controls.qtdCreditos?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.qtdCreditos?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.qtdCreditos?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="minisigaApp.disciplina.cargaHoraria" for="field_cargaHoraria">Carga Horaria</label>
+            <input type="number" class="form-control" name="cargaHoraria" id="field_cargaHoraria"
+                [(ngModel)]="disciplina.cargaHoraria" required />
+            <div [hidden]="!(editForm.controls.cargaHoraria?.dirty && editForm.controls.cargaHoraria?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.cargaHoraria?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.cargaHoraria?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

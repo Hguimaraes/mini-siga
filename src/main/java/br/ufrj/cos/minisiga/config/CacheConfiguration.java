@@ -40,6 +40,21 @@ public class CacheConfiguration {
             cm.createCache(br.ufrj.cos.minisiga.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(br.ufrj.cos.minisiga.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(br.ufrj.cos.minisiga.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Aluno.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Aluno.class.getName() + ".turmas", jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Funcionario.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Disciplina.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Disciplina.class.getName() + ".turmas", jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Turma.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Turma.class.getName() + ".notas", jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Turma.class.getName() + ".listaesperas", jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Turma.class.getName() + ".inscritos", jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Turma.class.getName() + ".horarios", jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Horario.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Horario.class.getName() + ".turmas", jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.ListaEsperaAlocacao.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Nota.class.getName(), jcacheConfiguration);
+            cm.createCache(br.ufrj.cos.minisiga.domain.Calendario.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,37 @@
+
+<div *ngIf="listaEsperaAlocacao">
+    <h2><span jhiTranslate="minisigaApp.listaEsperaAlocacao.detail.title">Lista Espera Alocacao</span> {{listaEsperaAlocacao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="minisigaApp.listaEsperaAlocacao.data">Data</span></dt>
+        <dd>
+            <span>{{listaEsperaAlocacao.data | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.listaEsperaAlocacao.aluno">Aluno</span></dt>
+        <dd>
+            <div *ngIf="listaEsperaAlocacao.aluno">
+                <a [routerLink]="['/aluno', listaEsperaAlocacao.aluno?.id]">{{listaEsperaAlocacao.aluno?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.listaEsperaAlocacao.turma">Turma</span></dt>
+        <dd>
+            <div *ngIf="listaEsperaAlocacao.turma">
+                <a [routerLink]="['/turma', listaEsperaAlocacao.turma?.id]">{{listaEsperaAlocacao.turma?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'lista-espera-alocacao/'+ listaEsperaAlocacao.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,33 @@
+
+<div *ngIf="aluno">
+    <h2><span jhiTranslate="minisigaApp.aluno.detail.title">Aluno</span> {{aluno.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="minisigaApp.aluno.cpf">Cpf</span></dt>
+        <dd>
+            <span>{{aluno.cpf}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.aluno.dre">Dre</span></dt>
+        <dd>
+            <span>{{aluno.dre}}</span>
+        </dd>
+        <dt><span jhiTranslate="minisigaApp.aluno.user">User</span></dt>
+        <dd>
+            {{aluno.user?.login}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'aluno/'+ aluno.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
