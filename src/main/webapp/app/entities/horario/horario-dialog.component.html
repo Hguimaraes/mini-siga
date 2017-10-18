@@ -14,13 +14,14 @@
         </div>
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="minisigaApp.horario.dia" for="field_dia">Dia</label>
-            <div class="input-group">
-                <input id="field_dia" type="text" class="form-control" name="dia" ngbDatepicker  #diaDp="ngbDatepicker" [(ngModel)]="horario.dia"
-                required/>
-                <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" (click)="diaDp.toggle()"><i class="fa fa-calendar"></i></button>
-                </span>
-            </div>
+            <select class="form-control" name="dia" [(ngModel)]="horario.dia" id="field_dia"  required>
+                <option value="SEG" jhiTranslate="minisigaApp.DIAS.SEG">SEG</option>
+                <option value="TER" jhiTranslate="minisigaApp.DIAS.TER">TER</option>
+                <option value="QUA" jhiTranslate="minisigaApp.DIAS.QUA">QUA</option>
+                <option value="QUI" jhiTranslate="minisigaApp.DIAS.QUI">QUI</option>
+                <option value="SEX" jhiTranslate="minisigaApp.DIAS.SEX">SEX</option>
+                <option value="SAB" jhiTranslate="minisigaApp.DIAS.SAB">SAB</option>
+            </select>
             <div [hidden]="!(editForm.controls.dia?.dirty && editForm.controls.dia?.invalid)">
                 <small class="form-text text-danger"
                    [hidden]="!editForm.controls.dia?.errors?.required" jhiTranslate="entity.validation.required">

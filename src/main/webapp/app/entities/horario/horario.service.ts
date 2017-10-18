@@ -58,8 +58,6 @@ export class HorarioService {
     }
 
     private convertItemFromServer(entity: any) {
-        entity.dia = this.dateUtils
-            .convertLocalDateFromServer(entity.dia);
         entity.horaInicio = this.dateUtils
             .convertDateTimeFromServer(entity.horaInicio);
         entity.horaFim = this.dateUtils
@@ -68,8 +66,6 @@ export class HorarioService {
 
     private convert(horario: Horario): Horario {
         const copy: Horario = Object.assign({}, horario);
-        copy.dia = this.dateUtils
-            .convertLocalDateToServer(horario.dia);
 
         copy.horaInicio = this.dateUtils.toDate(horario.horaInicio);
 

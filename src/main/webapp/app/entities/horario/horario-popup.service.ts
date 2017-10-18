@@ -28,13 +28,6 @@ export class HorarioPopupService {
 
             if (id) {
                 this.horarioService.find(id).subscribe((horario) => {
-                    if (horario.dia) {
-                        horario.dia = {
-                            year: horario.dia.getFullYear(),
-                            month: horario.dia.getMonth() + 1,
-                            day: horario.dia.getDate()
-                        };
-                    }
                     horario.horaInicio = this.datePipe
                         .transform(horario.horaInicio, 'yyyy-MM-ddThh:mm');
                     horario.horaFim = this.datePipe

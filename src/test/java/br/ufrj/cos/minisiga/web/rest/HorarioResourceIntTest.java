@@ -21,9 +21,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import java.time.LocalDate;
 import java.time.Instant;
-import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -32,6 +30,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import br.ufrj.cos.minisiga.domain.enumeration.DIAS;
 /**
  * Test class for the HorarioResource REST controller.
  *
@@ -41,8 +40,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MinisigaApp.class)
 public class HorarioResourceIntTest {
 
-    private static final LocalDate DEFAULT_DIA = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_DIA = LocalDate.now(ZoneId.systemDefault());
+    private static final DIAS DEFAULT_DIA = DIAS.SEG;
+    private static final DIAS UPDATED_DIA = DIAS.TER;
 
     private static final Instant DEFAULT_HORA_INICIO = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_HORA_INICIO = Instant.now().truncatedTo(ChronoUnit.MILLIS);

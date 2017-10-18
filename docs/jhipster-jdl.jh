@@ -21,7 +21,7 @@ entity Turma {
 }
 
 entity Horario {
-	dia LocalDate required
+	dia DIAS required
     horaInicio Instant required
     horaFim Instant required
     descExtenso String required
@@ -29,13 +29,6 @@ entity Horario {
 
 entity ListaEsperaAlocacao {
 	data ZonedDateTime required
-}
-
-enum CONCEITO{
-	A,
-    B,
-    C,
-    D
 }
 
 entity Nota {
@@ -50,6 +43,22 @@ entity Calendario {
     fimInsDisc ZonedDateTime required
     iniTrancDisc ZonedDateTime required
     fimTrancDisc ZonedDateTime required
+}
+
+enum CONCEITO{
+	A,
+    B,
+    C,
+    D
+}
+
+enum DIAS {
+	SEG,
+    TER,
+    QUA,
+    QUI,
+    SEX,
+    SAB
 }
 
 relationship OneToOne {

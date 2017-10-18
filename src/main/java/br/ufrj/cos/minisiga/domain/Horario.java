@@ -7,10 +7,11 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
+
+import br.ufrj.cos.minisiga.domain.enumeration.DIAS;
 
 /**
  * A Horario.
@@ -28,8 +29,9 @@ public class Horario implements Serializable {
     private Long id;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Column(name = "dia", nullable = false)
-    private LocalDate dia;
+    private DIAS dia;
 
     @NotNull
     @Column(name = "hora_inicio", nullable = false)
@@ -58,16 +60,16 @@ public class Horario implements Serializable {
         this.id = id;
     }
 
-    public LocalDate getDia() {
+    public DIAS getDia() {
         return dia;
     }
 
-    public Horario dia(LocalDate dia) {
+    public Horario dia(DIAS dia) {
         this.dia = dia;
         return this;
     }
 
-    public void setDia(LocalDate dia) {
+    public void setDia(DIAS dia) {
         this.dia = dia;
     }
 

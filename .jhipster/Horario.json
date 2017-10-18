@@ -13,7 +13,8 @@
     "fields": [
         {
             "fieldName": "dia",
-            "fieldType": "LocalDate",
+            "fieldType": "DIAS",
+            "fieldValues": "SEG,TER,QUA,QUI,SEX,SAB",
             "fieldValidateRules": [
                 "required"
             ]

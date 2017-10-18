@@ -22,7 +22,6 @@ export class HorarioDialogComponent implements OnInit {
     isSaving: boolean;
 
     turmas: Turma[];
-    diaDp: any;
 
     constructor(
         public activeModal: NgbActiveModal,

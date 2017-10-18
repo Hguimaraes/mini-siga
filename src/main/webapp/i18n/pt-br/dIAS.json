@@ -1,0 +1,13 @@
+{
+    "minisigaApp": {
+        "DIAS" : {
+            "null": "",
+            "SEG": "SEG",
+            "TER": "TER",
+            "QUA": "QUA",
+            "QUI": "QUI",
+            "SEX": "SEX",
+            "SAB": "SAB"
+        }
+    }
+}

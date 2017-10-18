@@ -28,7 +28,7 @@
             <tbody>
             <tr *ngFor="let horario of horarios ;trackBy: trackId">
                 <td><a [routerLink]="['../horario', horario.id ]">{{horario.id}}</a></td>
-                <td>{{horario.dia | date:'mediumDate'}}</td>
+                <td jhiTranslate="{{'minisigaApp.DIAS.' + horario.dia}}">{{horario.dia}}</td>
                 <td>{{horario.horaInicio | date:'medium'}}</td>
                 <td>{{horario.horaFim | date:'medium'}}</td>
                 <td>{{horario.descExtenso}}</td>
