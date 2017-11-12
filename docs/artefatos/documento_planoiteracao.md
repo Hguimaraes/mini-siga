@@ -24,6 +24,7 @@
 | Elaborar Documento de Requisitos | Create/Update UseCase Model |
 | Elaborar Documento de Casos de Uso | Create/Update UseCase Model |
 | Elaborar Diagrama de Classes | Create/Update Class Diagram |
+| do Plano de Medição Organizacional| Others |
 | Criar repositório no Github | SetUp Environment |
 | Definição e Instalação do ambiente de desenvolvimento | SetUp Environment |
 | Implementação do UC Logar no Sistema | Implement Requirement |
@@ -85,6 +86,12 @@
 | Relatório de Teste do UC Trancar Inscrição | Define TestCase |
 | Relatório de Teste do UC Gerenciar Calendário | Define TestCase |
 | Refatorar Implementação | Others |
+| Revisão do Diagrama de Classes| Create/Update Class Diagram |
+| Revisão dos Casos de Uso| Create/Update UseCase Model |
+| Revisão do Documento de EAP| Plan Project |
+| Revisão do Documento de Especificação de Requisitos| Create/Update Class Diagram |
+| Revisão do Plano de Medição Organizacional | Others|
+| Revisão do Plano de Iteração| Define Iteration Plan |
 | Criar Documentação do Usuário | Create/Refine User Documentation |
 | Reunião de apresentação para o Stakeholder | Others |
 | Reunião de Equipe para melhorar processos internos | Others |
