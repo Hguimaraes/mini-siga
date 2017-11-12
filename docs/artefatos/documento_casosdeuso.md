@@ -28,18 +28,18 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 4. **Fluxo Principal**
 
-	1. É apresentada uma interface [**[IUC001]**](#iuc001) para o ator digitar seus dados.
-	2. O ator digita seu CPF
-	3. O ator digita sua senha
-	4. O ator clica no botão “Entrar” **[A1]**
-	5. O sistema redireciona o ator para a tela principal do sistema [**[IUC002]**](#iuc002)
+	1. É apresentada uma interface [**[IUC001]**](#iuc001) para o ator inserir seus dados.
+	2. O ator insere seu CPF
+	3. O ator insere sua senha
+	4. O ator realiza a ação de “Entrar” **[A1]**
+	5. O sistema redireciona o ator para a interface principal [**[IUC002]**](#iuc002)
 
 5. **Fluxo Alternativo**
 
 	1. **[A1] Dados inválidos**
 
 		Sistema informa que CPF ou Senha estão incorretos.
-		O ator continua na mesma tela e tem a opção de refazer outras tentativas de Login.
+		O ator continua na mesma interface e tem a opção de refazer outras tentativas de Login.
 
 ---
 
@@ -63,10 +63,10 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 	
-	Escolher a opção gerenciar disciplinas no menu de ações [**[IUC002]**](#iuc002)
+	Escolher a opção gerenciar disciplinas na interface principal do sistema [**[IUC002]**](#iuc002)
 
 6. **Fluxo Principal**
-	1. O ator seleciona a aba de gerenciamento de disciplinas
+	1. O ator seleciona a opção de gerenciamento de disciplinas
 	2. O sistema fornece algumas opções de gerenciamento para o ator escolher de acordo com suas necessidades, sendo as opções:
 		1. Criar Disciplina [**[Extend UC003]**](#uc003)
 		2. Alterar Disciplina [**[Extend UC004]**](#uc004)
@@ -94,16 +94,16 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 
-	Ator clicar no botão de criação de novas disciplinas [**[IUC003]**](#iuc003)
+	Ator escolher a opção de criação de novas disciplinas [**[IUC003]**](#iuc003)
 
 6. **Fluxo Principal**
 
-	1. O ator clica no botão de criação de Disciplinas e um modal [**[IUC004]**](#iuc004) será aberto para inserir os dados.
-		1. O ator digita o código da nova disciplina **[R1]**
-		2. O ator digita o nome da disciplina
-		3. O ator digita o número de horas da disciplina **[R2]**
-		4. O ator digita o número de créditos da disciplina **[R3]**
-	2. O ator clica no botão Enviar
+	1. O ator seleciona a opção de criação de Disciplinas e uma interface [**[IUC004]**](#iuc004) será aberta para inserir os dados.
+		1. O ator fornece o código da nova disciplina **[R1]**
+		2. O ator fornece o nome da disciplina
+		3. O ator fornece o número de horas da disciplina **[R2]**
+		4. O ator fornece o número de créditos da disciplina **[R3]**
+	2. O ator envia suas informações para validação
 	3. O sistema verifica a validade dos dados **[A1]**
 	4. O sistema retorna uma mensagem de sucesso. **[A2]**
 
@@ -146,16 +146,16 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 
-	Ator clicar no botão de alterar disciplina [**[IUC003]**](#iuc003)
+	Ator selecionar a opção de alterar disciplina [**[IUC003]**](#iuc003)
 
 6. **Fluxo Principal**
 
-	1. O ator clica no botão de alteração de Disciplinas e um modal [**[IUC004]**](#iuc004) será aberto com os dados atuais já preenchidos.
-		1. O ator digita o novo código da nova disciplina **[R1]**
-		2. O ator digita o novo nome da disciplina
-		3. O ator digita o novo número de horas da disciplina **[R2]**
-		4. O ator digita o novo número de créditos da disciplina **[R3]**
-	2. O ator clica no botão Enviar
+	1. O ator seleciona a opção de alteração de Disciplinas e um modal [**[IUC004]**](#iuc004) será aberto com os dados atuais já preenchidos.
+		1. O ator fornece o novo código da nova disciplina **[R1]**
+		2. O ator fornece o novo nome da disciplina
+		3. O ator fornece o novo número de horas da disciplina **[R2]**
+		4. O ator fornece o novo número de créditos da disciplina **[R3]**
+	2. O ator envia suas informações para validação
 	3. O sistema verifica a validade dos dados **[A1]**
 	4. O sistema retorna uma mensagem de sucesso. **[A2]**
 
@@ -196,7 +196,7 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 
-	Escolher a opção de gerenciar turmas no menu de ações [**[IUC002]**](#iuc002)
+	Escolher a opção de gerenciar turmas na interface principal do sistema [**[IUC002]**](#iuc002)
 
 6. **Fluxo Principal**
 
@@ -231,17 +231,17 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 
-	Ator clicar no botão de criação de turmas [**[IUC005]**](#iuc005)
+	Ator selecionar a opção de criação de turmas [**[IUC005]**](#iuc005)
 
 6. **Fluxo Principal**
 
-	1. O ator clica no botão de criação de turmas em um modal será aberto [**[IUC006]**](#iuc006) para o preenchimento das seguintes informações:
+	1. O ator seleciona a opção de criação de turmas em uma interface será aberta [**[IUC006]**](#iuc006) para o preenchimento das seguintes informações:
 		1. O ator insere o código da disciplina
 		2. O ator insere o SIAP do professor **[R1]**
 		3. O ator insere o dia e horário da turma **[R2]**
 		4. O ator insere o número máximo de inscritos
 		5. O ator informa o número da sala da aula
-	2. O ator clica no botão Enviar
+	2. O ator envia suas informações para validação
 	3. O sistema verifica a validade dos dados inseridos **[A1]**
 	4. O sistema retorna uma mensagem de sucesso no cadastramento da turma **[A2]**
 
@@ -285,17 +285,17 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 
-	Ator clicar no botão de alterar turmas [**[IUC005]**](#iuc005)
+	Ator selecionar a opção de alterar turmas [**[IUC005]**](#iuc005)
 
 6. **Fluxo Principal**
 
-	1. O ator clica no botão de criação de turmas e um modal será aberto [**[IUC006]**](IUC006), com os campos já preenchidos com os valores atuais, para o preenchimento das seguintes informações :
+	1. O ator clica no botão de criação de turmas e uma interface será aberta [**[IUC006]**](IUC006), com os campos já preenchidos com os valores atuais, para o preenchimento das seguintes informações :
 		1. O ator insere novo código da disciplina
 		2. O ator insere novo SIAP do professor **[R1]**
 		3. O ator insere novo dia e horário da turma **[R2]**
 		4. O ator insere novo número máximo de inscritos
 		5. O ator informa novo número da sala da aula
-	2. O ator clica no botão Enviar
+	2. O ator envia suas informações para validação
 	3. O sistema verifica a validade dos dados inseridos **[A1]**
 	4. O sistema retorna uma mensagem de sucesso na alteração da turma **[A2]**
 
@@ -331,13 +331,13 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 
-	O ator deve clicar no botão de excluir turma para iniciar o caso de uso [**[IUC005]**](#iuc005)
+	O ator deve selecionar a opção de excluir turma para iniciar o caso de uso [**[IUC005]**](#iuc005)
 
 4. **Fluxo Principal**
 
-	1. O ator clica no botão de excluir a turma
-	2. Um caixa de diálogo será aberto para que ele confirme a decisão dele
-	3. O sistema retorna uma mensagem dizendo que a turma foi excluída **[A1][R1]**
+	1. O ator seleciona a opção de excluir a turma
+	2. O sistema pede confirmação para que ele decisão seja executada
+	3. O sistema retorna uma resposta dizendo que a turma foi excluída **[A1][R1]**
 	4. O sistema envia um e-mail para os alunos inscritos nesta turma para notificar sobre a exclusão
 
 5. **Fluxo Alternativo**
@@ -374,15 +374,15 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 
-	Clicar na aba de “Inscrição em Disciplinas” do menu de ações [**[IUC002]**](#iuc002)
+	Selecionar a opção de “Inscrição em Disciplinas” [**[IUC002]**](#iuc002)
 
 4. **Fluxo Principal**
 
 	Ator Aluno se inscrevendo em disciplinas
 
-	1. O sistema exibe uma lista de turmas disponíveis para aquele semestre, com a quantidade de créditos, horário e quantidade de inscritos atualmente. [**[IUC007]**](#iuc007)**[A1]**
+	1. O sistema fornece uma lista de turmas disponíveis para aquele semestre, com a quantidade de créditos, horário e quantidade de inscritos atualmente. [**[IUC007]**](#iuc007)**[A1]**
 	2. O ator seleciona um conjunto de turmas dentre a lista exibida.
-	3. O ator clica no botão “Confirmar Inscrição” [**[IUC007]**](#iuc007)
+	3. O ator seleciona a opção de “Confirmar Inscrição” [**[IUC007]**](#iuc007)
 	4. O sistema retorna uma mensagem de sucesso para a inscrição. **[E1][E2][E3][R1]**
 	5. O sistema envia um e-mail com a confirmação de inscrição em disciplinas
 
@@ -390,9 +390,9 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 	Ator Funcionário inscrevendo alunos em disciplinas
 
-	1. O sistema exibe uma lista de turmas disponíveis para aquele semestre, com a quantidade de créditos, horário e quantidade de inscritos atualmente. Um campo para inserir o DRE do aluno em questão também é apresentado. [**[IUC008]**](#iuc008)
+	1. O sistema fornece uma lista de turmas disponíveis para aquele semestre, com a quantidade de créditos, horário e quantidade de inscritos atualmente. Um campo para inserir o DRE do aluno em questão também é apresentado. [**[IUC008]**](#iuc008)
 	2. O ator seleciona um conjunto de turmas dentre a lista exibida
-	3. O ator clica no botão “Confirmar Inscrição” [**[IUC008]**](#iuc008)
+	3. O ator seleciona a opção “Confirmar Inscrição” [**[IUC008]**](#iuc008)
 	4. O sistema retorna uma mensagem de sucesso para a inscrição. **[E1][E2][E3][E4][R1]**
 
 6. **Fluxo Exceção**
@@ -436,13 +436,13 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 
-	Ator selecionar a opção de “Lançamento de notas” na aba “Gerenciar” do menu de ações [**[IUC002]**](#iuc002)
+	Ator selecionar a opção de “Lançamento de notas” [**[IUC002]**](#iuc002)
 
 5. **Fluxo Principal**
 
 	1. O ator seleciona a turma para a qual quer lançar notas
-	2. O sistema exibe uma lista com o nome e DRE de todos os alunos inscritos naquela turma e um campo de dropdown para escolher o conceito do aluno [**[IUC009]**](#iuc009)**[R1]**
-	3. O ator clica no botão de “Enviar”
+	2. O sistema fornece uma lista com o nome e DRE de todos os alunos inscritos naquela turma e um campo para escolher o conceito do aluno [**[IUC009]**](#iuc009)**[R1]**
+	3. O ator envia as notas para a validação do sistema
 	4. O sistema retorna uma mensagem de sucesso
 
 6. **Fluxo Exceção**
@@ -475,11 +475,11 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 
-	Ator clicar na aba “Grade” do menu de ações [**[IUC002]**](#iuc002)
+	Ator seleciona a opção "Grade" no sistema [**[IUC002]**](#iuc002)
 
 6. **Fluxo Principal**
 
-	1. O sistema exibe uma lista de disciplinas cadastradas exibidas por ordem de cadastro
+	1. O sistema fornece uma lista de disciplinas cadastradas exibidas por ordem de cadastro
 
 ---
 
@@ -504,7 +504,7 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 4. **Trigger**
 
-	Ator clicar na aba “Inscrição em Disciplinas” no menu de ações [**[IUC002]**](#iuc002)
+	Ator seleciona a opção “Inscrição em Disciplinas” [**[IUC002]**](#iuc002)
 
 5. **Fluxo Principal**
 
@@ -533,9 +533,9 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 4. **Fluxo Principal**
 
-	1. O ator clica na aba de “Inscrição em disciplinas” no menu de ações [**[IUC002]**](#iuc002)
-	2. A lista de disciplinas que o ator já se inscreveu será exibida na tela, junto com a opção de trancar **[A1]**[**[IUC007]**](#iuc007)
-	3. Ao clicar, o sistema retorna uma mensagem de sucesso no trancamento de tal disciplina para o ator.
+	1. O ator seleciona a opção “Inscrição em disciplinas” [**[IUC002]**](#iuc002)
+	2. A lista de disciplinas que o ator já se inscreveu será fornecida para o aluno, junto com a opção de trancar **[A1]**[**[IUC007]**](#iuc007)
+	3. Ao selecionar, o sistema retorna uma mensagem de sucesso no trancamento de tal disciplina para o ator.
 
 5. **Fluxo Alternativo**
 
@@ -563,15 +563,15 @@ O documento está dividido em duas partes principais: A primeira contém o diagr
 
 5. **Trigger**
 
-	Ator deve clicar na aba “Gerenciar” e escolher a opção “Gerenciar Calendário” no menu de opções
+	Ator selecionar a opção “Gerenciar Calendário” na interface principal do sistema
 
 6. **Fluxo Principal**
 
 	1. Ator seleciona o período que deseja editar **[R1]**
-	2. Ator insere a data de início e fim do período letivo
-	3. Ator insere a data de início e fim do período de inscrição em disciplinas
-	4. Ator insere a data de início e fim do período de trancamento de disciplinas
-	5. Ator clica em enviar
+	2. Ator fornece a data de início e fim do período letivo
+	3. Ator fornece a data de início e fim do período de inscrição em disciplinas
+	4. Ator fornece a data de início e fim do período de trancamento de disciplinas
+	5. Ator envia as informações para validação do sistema
 	6. Sistema envia uma mensagem de sucesso para o ator **[E1]**
 
 7. **Fluxo Exceção**
