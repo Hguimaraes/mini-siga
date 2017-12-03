@@ -1,5 +1,5 @@
 <div>
-    <h2>
+    <h2 *jhiHasAnyAuthority="'ROLE_ADMIN'">
         <span jhiTranslate="minisigaApp.disciplina.home.title">Disciplinas</span>
         <button class="btn btn-primary float-right jh-create-entity create-disciplina" [routerLink]="['/', { outlets: { popup: ['disciplina-new'] } }]">
             <span class="fa fa-plus"></span>
@@ -32,7 +32,7 @@
                 <td>{{disciplina.qtdCreditos}}</td>
                 <td>{{disciplina.cargaHoraria}}</td>
                 <td class="text-right">
-                    <div class="btn-group flex-btn-group-container">
+                    <div class="btn-group flex-btn-group-container" >
                         <button type="submit"
                                 [routerLink]="['../disciplina', disciplina.id ]"
                                 class="btn btn-info btn-sm">
@@ -42,14 +42,16 @@
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'disciplina/'+ disciplina.id + '/edit'} }]"
                                 replaceUrl="true"
-                                class="btn btn-primary btn-sm">
+                                class="btn btn-primary btn-sm"
+                                *jhiHasAnyAuthority="'ROLE_ADMIN'">
                             <span class="fa fa-pencil"></span>
                             <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'disciplina/'+ disciplina.id + '/delete'} }]"
                                 replaceUrl="true"
-                                class="btn btn-danger btn-sm">
+                                class="btn btn-danger btn-sm"
+                                *jhiHasAnyAuthority="'ROLE_ADMIN'">
                             <span class="fa fa-remove"></span>
                             <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
