@@ -15,14 +15,12 @@
         <dt><span jhiTranslate="minisigaApp.turma.professor">Professor</span></dt>
         <dd>
             <div *ngIf="turma.professor">
-                <a [routerLink]="['/funcionario', turma.professor?.id]">{{turma.professor?.siap}}</a>
+                <a [routerLink]="['/funcionario', turma.professor?.id]">{{turma.professor?.user.firstName}}</a>
             </div>
         </dd>
         <dt><span jhiTranslate="minisigaApp.turma.inscritos">Inscritos</span></dt>
         <dd>
-            <span *ngFor="let inscritos of turma.inscritos; let last = last">
-                <a [routerLink]="['/aluno', inscritos?.id ]">{{inscritos.id}}</a>{{last ? '' : ', '}}
-            </span>
+            <span>{{turma.inscritos?.length}}</span>
         </dd>
         <dt><span jhiTranslate="minisigaApp.turma.disciplina">Disciplina</span></dt>
         <dd>

@@ -3,9 +3,11 @@
         "turma" : {
             "home": {
                 "title": "Turmas",
-                "createLabel": "Criar novo Turma",
-                "createOrEditLabel": "Criar ou editar Turma"
+                "createLabel": "Criar nova Turma",
+                "createOrEditLabel": "Criar ou editar Turma",
+                "yourClasses": "Suas inscrições"
             },
+            "register": "Inscrição",
             "created": "Um novo Turma foi criado com o identificador {{ param }}",
             "updated": "Um Turma foi atualizado com o identificador {{ param }}",
             "deleted": "Um Turma foi deletado com o identificador {{ param }}",
@@ -19,7 +21,6 @@
             "sala": "Sala",
             "professor": "Professor",
             "nota": "Nota",
-            "listaespera": "Listaespera",
             "inscritos": "Inscritos",
             "disciplina": "Disciplina",
             "horario": "Horario"

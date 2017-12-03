@@ -6,7 +6,7 @@
 
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span *ngIf="account" jhiTranslate="home.logged.message"
-                    translateValues="{username: '{{account.login}}'}"> Welcome, "{{account.login}}".
+                    translateValues="{username: '{{account.firstName}}'}"> Welcome, {{account.firstName}}.
                 </span>
             </div>
 

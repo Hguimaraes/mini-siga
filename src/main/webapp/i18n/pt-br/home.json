@@ -4,7 +4,7 @@
         "headtitle": "Bem-vindo ao MiniSiga",
         "subtitle": "Sistema de gerenciamento de disciplinas da Universidade Federal do Rio de Janeiro (UFRJ)",
         "logged": {
-            "message": "Bem-vindo, \"{{username}}\"."
+            "message": "Bem-vindo, {{username}}."
         },
         "unlogged":{
             "message": "Você precisa ser um aluno ou funcionário da UFRJ para utilizar o sistema"

@@ -10,7 +10,10 @@ import { PaginationConfig } from '../../blocks/config/uib-pagination.config';
 
 @Component({
     selector: 'jhi-turma',
-    templateUrl: './turma.component.html'
+    templateUrl: './turma.component.html',
+    styleUrls: [
+        'turma.scss'
+    ]
 })
 export class TurmaComponent implements OnInit, OnDestroy {
 turmas: Turma[];
