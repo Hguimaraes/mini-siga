@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import br.ufrj.cos.minisiga.service.DisciplinaService;
+
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -31,8 +33,12 @@ public class DisciplinaResource {
 
     private final DisciplinaRepository disciplinaRepository;
 
+    private DisciplinaService disciplinaService;
+
+
     public DisciplinaResource(DisciplinaRepository disciplinaRepository) {
         this.disciplinaRepository = disciplinaRepository;
+        this.disciplinaService = new DisciplinaService(disciplinaRepository);
     }
 
     /**
@@ -46,6 +52,11 @@ public class DisciplinaResource {
     @Timed
     public ResponseEntity<Disciplina> createDisciplina(@Valid @RequestBody Disciplina disciplina) throws URISyntaxException {
         log.debug("REST request to save Disciplina : {}", disciplina);
+
+        if(!disciplinaService.validateParameters(disciplina)){
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "parameters", "Invalid parameters. Check the system rules")).body(null);
+        }
+
         if (disciplina.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new disciplina cannot already have an ID")).body(null);
         }
@@ -68,6 +79,11 @@ public class DisciplinaResource {
     @Timed
     public ResponseEntity<Disciplina> updateDisciplina(@Valid @RequestBody Disciplina disciplina) throws URISyntaxException {
         log.debug("REST request to update Disciplina : {}", disciplina);
+
+        if(!disciplinaService.validateParameters(disciplina)){
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "parameters", "Invalid parameters. Check the system rules")).body(null);
+        }
+
         if (disciplina.getId() == null) {
             return createDisciplina(disciplina);
         }

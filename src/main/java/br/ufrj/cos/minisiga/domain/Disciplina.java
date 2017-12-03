@@ -27,7 +27,8 @@ public class Disciplina implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "codigo", nullable = false)
+    @Size(min = 6, max = 6)
+    @Column(name = "codigo", nullable = false,length = 6, unique = true)
     private String codigo;
 
     @NotNull
