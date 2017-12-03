@@ -47,14 +47,6 @@
                             <span class="fa fa-pencil"></span>
                             <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
-                        <button type="submit"
-                                [routerLink]="['/', { outlets: { popup: 'disciplina/'+ disciplina.id + '/delete'} }]"
-                                replaceUrl="true"
-                                class="btn btn-danger btn-sm"
-                                *jhiHasAnyAuthority="'ROLE_ADMIN'">
-                            <span class="fa fa-remove"></span>
-                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
-                        </button>
                     </div>
                 </td>
             </tr>
