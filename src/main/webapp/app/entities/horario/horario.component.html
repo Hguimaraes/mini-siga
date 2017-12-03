@@ -21,7 +21,6 @@
             <th><span jhiTranslate="minisigaApp.horario.horaInicio">Hora Inicio</span></th>
             <th><span jhiTranslate="minisigaApp.horario.horaFim">Hora Fim</span></th>
             <th><span jhiTranslate="minisigaApp.horario.descExtenso">Desc Extenso</span></th>
-            <th><span jhiTranslate="minisigaApp.horario.turma">Turma</span></th>
             <th></th>
             </tr>
             </thead>
@@ -32,11 +31,6 @@
                 <td>{{horario.horaInicio | date:'medium'}}</td>
                 <td>{{horario.horaFim | date:'medium'}}</td>
                 <td>{{horario.descExtenso}}</td>
-                <td>
-                    <span *ngFor="let turma of horario.turmas; let last = last">
-                            <a class="form-control-static" [routerLink]="['../turma', turma?.id ]">{{turma.id}}</a>{{last ? '' : ', '}}
-                        </span>
-                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
