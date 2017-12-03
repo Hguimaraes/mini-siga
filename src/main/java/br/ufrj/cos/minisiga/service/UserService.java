@@ -2,16 +2,22 @@ package br.ufrj.cos.minisiga.service;
 
 import br.ufrj.cos.minisiga.domain.Authority;
 import br.ufrj.cos.minisiga.domain.User;
+import br.ufrj.cos.minisiga.domain.Aluno;
+import br.ufrj.cos.minisiga.domain.Funcionario;
 import br.ufrj.cos.minisiga.repository.AuthorityRepository;
 import br.ufrj.cos.minisiga.config.Constants;
+import br.ufrj.cos.minisiga.repository.AlunoRepository;
+import br.ufrj.cos.minisiga.repository.FuncionarioRepository;
 import br.ufrj.cos.minisiga.repository.UserRepository;
 import br.ufrj.cos.minisiga.security.AuthoritiesConstants;
 import br.ufrj.cos.minisiga.security.SecurityUtils;
 import br.ufrj.cos.minisiga.service.util.RandomUtil;
 import br.ufrj.cos.minisiga.service.dto.UserDTO;
 
+import br.ufrj.cos.minisiga.web.rest.vm.LoginVM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -34,13 +40,19 @@ public class UserService {
     private final Logger log = LoggerFactory.getLogger(UserService.class);
 
     private final UserRepository userRepository;
+    private final AlunoRepository alunoRepository;
+    private final FuncionarioRepository funcionarioRepository;
 
     private final PasswordEncoder passwordEncoder;
 
     private final AuthorityRepository authorityRepository;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository) {
+    public UserService(UserRepository userRepository, AlunoRepository alunoRepository,
+                       FuncionarioRepository funcionarioRepository,  PasswordEncoder passwordEncoder,
+                       AuthorityRepository authorityRepository) {
         this.userRepository = userRepository;
+        this.alunoRepository = alunoRepository;
+        this.funcionarioRepository = funcionarioRepository;
         this.passwordEncoder = passwordEncoder;
         this.authorityRepository = authorityRepository;
     }
@@ -238,5 +250,21 @@ public class UserService {
      */
     public List<String> getAuthorities() {
         return authorityRepository.findAll().stream().map(Authority::getName).collect(Collectors.toList());
+    }
+
+    /**
+     * @return login of the user from a given cpf
+     */
+    public String usernamefromCPF(LoginVM loginvm){
+        String username = null;
+        Aluno aluno = alunoRepository.findOneByCpf(loginvm.getCPF()).get();
+        Funcionario funcionario = funcionarioRepository.findOneByCpf(loginvm.getCPF()).get();
+        User user = null;
+
+        if (!(aluno == null && funcionario == null)){
+            user = (aluno == null)? funcionario.getUser():aluno.getUser();
+        }
+
+        return user.getLogin();
     }
 }

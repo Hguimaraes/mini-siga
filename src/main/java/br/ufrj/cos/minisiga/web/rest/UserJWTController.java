@@ -2,6 +2,7 @@ package br.ufrj.cos.minisiga.web.rest;
 
 import br.ufrj.cos.minisiga.security.jwt.JWTConfigurer;
 import br.ufrj.cos.minisiga.security.jwt.TokenProvider;
+import br.ufrj.cos.minisiga.service.UserService;
 import br.ufrj.cos.minisiga.web.rest.vm.LoginVM;
 
 import com.codahale.metrics.annotation.Timed;
@@ -43,7 +44,6 @@ public class UserJWTController {
     @PostMapping("/authenticate")
     @Timed
     public ResponseEntity authorize(@Valid @RequestBody LoginVM loginVM, HttpServletResponse response) {
-        log.debug(loginVM.toString());
         UsernamePasswordAuthenticationToken authenticationToken =
             new UsernamePasswordAuthenticationToken(loginVM.getCPF(), loginVM.getPassword());
 
@@ -59,14 +59,6 @@ public class UserJWTController {
             return new ResponseEntity<>(Collections.singletonMap("AuthenticationException",
                 ae.getLocalizedMessage()), HttpStatus.UNAUTHORIZED);
         }
-    }
-
-    @PostMapping("/cpfauthenticate")
-    @Timed
-    public ResponseEntity cpfauthorize(@Valid @RequestBody LoginVM loginVM, HttpServletResponse response) {
-        log.debug(loginVM.toString());
-        String jwt = "TESTE";
-        return ResponseEntity.ok(new JWTToken(jwt));
     }
 
     /**
