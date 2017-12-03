@@ -13,7 +13,7 @@ public class LoginVM {
     @Pattern(regexp = Constants.LOGIN_REGEX)
     @NotNull
     @Size(min = 1, max = 50)
-    private String username;
+    private String cpf;
 
     @NotNull
     @Size(min = ManagedUserVM.PASSWORD_MIN_LENGTH, max = ManagedUserVM.PASSWORD_MAX_LENGTH)
@@ -21,12 +21,12 @@ public class LoginVM {
 
     private Boolean rememberMe;
 
-    public String getUsername() {
-        return username;
+    public String getCPF() {
+        return cpf;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setCPF(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getPassword() {
@@ -48,7 +48,8 @@ public class LoginVM {
     @Override
     public String toString() {
         return "LoginVM{" +
-            "username='" + username + '\'' +
+            "cpf='" + cpf + '\'' +
+            "password='" + password + '\'' +
             ", rememberMe=" + rememberMe +
             '}';
     }

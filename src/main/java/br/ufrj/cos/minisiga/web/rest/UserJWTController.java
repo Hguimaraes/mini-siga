@@ -43,9 +43,9 @@ public class UserJWTController {
     @PostMapping("/authenticate")
     @Timed
     public ResponseEntity authorize(@Valid @RequestBody LoginVM loginVM, HttpServletResponse response) {
-
+        log.debug(loginVM.toString());
         UsernamePasswordAuthenticationToken authenticationToken =
-            new UsernamePasswordAuthenticationToken(loginVM.getUsername(), loginVM.getPassword());
+            new UsernamePasswordAuthenticationToken(loginVM.getCPF(), loginVM.getPassword());
 
         try {
             Authentication authentication = this.authenticationManager.authenticate(authenticationToken);
@@ -59,6 +59,14 @@ public class UserJWTController {
             return new ResponseEntity<>(Collections.singletonMap("AuthenticationException",
                 ae.getLocalizedMessage()), HttpStatus.UNAUTHORIZED);
         }
+    }
+
+    @PostMapping("/cpfauthenticate")
+    @Timed
+    public ResponseEntity cpfauthorize(@Valid @RequestBody LoginVM loginVM, HttpServletResponse response) {
+        log.debug(loginVM.toString());
+        String jwt = "TESTE";
+        return ResponseEntity.ok(new JWTToken(jwt));
     }
 
     /**
