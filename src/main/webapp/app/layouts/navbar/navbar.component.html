@@ -36,25 +36,25 @@
             <!-- For all users -->
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
-                    <i class="fa fa-fw fa-hdd-o" aria-hidden="true"></i>
+                    <i class="fa fa-fw fa-home" aria-hidden="true"></i>
                     <span jhiTranslate="global.menu.home">Home</span>
                 </a>
             </li>
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
-                    <i class="fa fa-fw fa-hdd-o" aria-hidden="true"></i>
+                    <i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i>
                     <span jhiTranslate="global.menu.courseenrollment">Enrollment</span>
                 </a>
             </li>
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="disciplina" (click)="collapseNavbar()">
-                    <i class="fa fa-fw fa-hdd-o" aria-hidden="true"></i>
+                    <i class="fa fa-fw fa-university" aria-hidden="true"></i>
                     <span jhiTranslate="global.menu.courseclasses">Courses</span>
                 </a>
             </li>
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
-                    <i class="fa fa-fw fa-hdd-o" aria-hidden="true"></i>
+                    <i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
                     <span jhiTranslate="global.menu.calendar">Calendar</span>
                 </a>
             </li>
@@ -63,7 +63,7 @@
             <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="admin-menu">
                     <span>
-                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        <i class="fa fa-cogs" aria-hidden="true"></i>
                         <span jhiTranslate="global.menu.admin.main">Management</span>
                         <b class="caret"></b>
                     </span>
@@ -71,25 +71,25 @@
                 <ul class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
                     <li>
                         <a class="dropdown-item" routerLink="user-management" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-user" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-cog" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.admin.calendar">Calendar</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="disciplina" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-user" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-cog" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.admin.coursemanagement">Course management</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="user-management" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-user" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-cog" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.admin.classmanagement">Class management</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="user-management" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-user" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-cog" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.admin.registergrades">Register Grades</span>
                         </a>
                     </li>
