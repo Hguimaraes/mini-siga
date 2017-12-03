@@ -14,7 +14,7 @@ export class JhiLoginModalComponent implements AfterViewInit {
     authenticationError: boolean;
     password: string;
     rememberMe: boolean;
-    username: string;
+    cpf: string;
     credentials: any;
 
     constructor(
@@ -30,12 +30,12 @@ export class JhiLoginModalComponent implements AfterViewInit {
     }
 
     ngAfterViewInit() {
-        this.renderer.invokeElementMethod(this.elementRef.nativeElement.querySelector('#username'), 'focus', []);
+        this.renderer.invokeElementMethod(this.elementRef.nativeElement.querySelector('#cpf'), 'focus', []);
     }
 
     cancel() {
         this.credentials = {
-            username: null,
+            cpf: null,
             password: null,
             rememberMe: true
         };
@@ -45,7 +45,7 @@ export class JhiLoginModalComponent implements AfterViewInit {
 
     login() {
         this.loginService.login({
-            username: this.username,
+            cpf: this.cpf,
             password: this.password,
             rememberMe: this.rememberMe
         }).then(() => {

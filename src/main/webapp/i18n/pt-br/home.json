@@ -1,9 +1,13 @@
 {
     "home": {
-        "title": "Bem vindo, Java Hipster!",
-        "subtitle": "Esta é  a página principal",
+        "title": "Home",
+        "headtitle": "Bem-vindo ao MiniSiga",
+        "subtitle": "Sistema de gerenciamento de disciplinas da Universidade Federal do Rio de Janeiro (UFRJ)",
         "logged": {
-            "message": "Você está logado como \"{{username}}\"."
+            "message": "Bem-vindo, \"{{username}}\"."
+        },
+        "unlogged":{
+            "message": "Você precisa ser um aluno ou funcionário da UFRJ para utilizar o sistema"
         },
         "question": "Em caso de dúvida sobre o JHipster:",
         "link": {

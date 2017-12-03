@@ -1,45 +1,21 @@
 {
     "global": {
-        "title": "Minisiga",
+        "title": "MiniSiga",
         "browsehappy": "Você está usando um navegador <strong>desatualizado</strong>. Favor <a href=\"http://browsehappy.com/?locale=pt_BR\">atualizar o seu navegador</a> para ter uma experiência melhor.",
         "menu": {
             "home": "Início",
-            "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
-            "entities": {
-                "main": "Entidades",
-                "aluno": "Aluno",
-                "funcionario": "Funcionario",
-                "disciplina": "Disciplina",
-                "turma": "Turma",
-                "horario": "Horario",
-                "listaEsperaAlocacao": "Lista Espera Alocacao",
-                "nota": "Nota",
-                "calendario": "Calendario",
-                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
-            },
-            "account": {
-                "main": "Conta",
-                "settings": "Configuração",
-                "password": "Senha",
-                "sessions": "Sessões",
-                "login": "Entrar",
-                "logout": "Sair",
-                "register": "Registrar"
-            },
+            "courseenrollment": "Inscrição em Disciplinas",
+            "courseclasses": "Grade",
+            "calendar": "Calendário",
             "admin": {
-                "main": "Administração",
-                "userManagement": "Gerenciamento de usuário",
-                "tracker": "Rastreamento de usuário",
-                "metrics": "Métricas",
-                "health": "Estado do Sistema",
-                "configuration": "Configuração",
-                "logs": "Logs",
-                "audits": "Auditorias",
-                "apidocs": "API",
-                "database": "Banco de dados",
-                "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
+                "main": "Gerenciar",
+                "calendar": "Gerenciar Calendário",
+                "coursemanagement": "Gerenciar Disciplinas",
+                "classmanagement": "Gerenciar Turmas",
+                "registergrades": "Lançamento de Grau"
             },
-            "language": "Idioma"
+            "login": "Entrar",
+            "logout": "Sair"
         },
         "form": {
             "username": "Usuário",
@@ -49,7 +25,9 @@
             "confirmpassword": "Confirmação de nova senha",
             "confirmpassword.placeholder": "Confirme a nova senha",
             "email": "Email",
-            "email.placeholder": "Seu email"
+            "email.placeholder": "Seu email",
+            "cpf": "CPF",
+            "cpf.placeholder": "Seu CPF"
         },
         "messages": {
             "info": {
@@ -136,5 +114,5 @@
         "emailexists": "Este email já está cadastrado!",
         "idexists": "Novo(a) {{entityName}} não pode ter uma ID"
     },
-    "footer": "Este é o seu rodapé"
+    "footer": "Copyright &copy; 2017 MiniSiga. All Rights Reserved."
 }
