@@ -5,7 +5,7 @@ import { JhiEventManager, JhiParseLinks, JhiPaginationUtil, JhiLanguageService, 
 
 import { Turma } from './turma.model';
 import { TurmaService } from './turma.service';
-import { ITEMS_PER_PAGE, Principal, ResponseWrapper } from '../../shared';
+import { ITEMS_PER_PAGE, Principal, ResponseWrapper, User } from '../../shared';
 import { PaginationConfig } from '../../blocks/config/uib-pagination.config';
 
 @Component({
@@ -17,6 +17,7 @@ import { PaginationConfig } from '../../blocks/config/uib-pagination.config';
 })
 export class TurmaComponent implements OnInit, OnDestroy {
 turmas: Turma[];
+user: User;
     currentAccount: any;
     eventSubscriber: Subscription;
 
@@ -40,6 +41,9 @@ turmas: Turma[];
         this.loadAll();
         this.principal.identity().then((account) => {
             this.currentAccount = account;
+        });
+        this.principal.identity().then((user) => {
+            this.user = user;
         });
         this.registerChangeInTurmas();
     }

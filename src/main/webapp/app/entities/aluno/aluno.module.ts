@@ -14,6 +14,7 @@ import {
     AlunoDeleteDialogComponent,
     alunoRoute,
     alunoPopupRoute,
+    AlunoInscricaoComponent,
 } from './';
 
 const ENTITY_STATES = [
@@ -34,6 +35,7 @@ const ENTITY_STATES = [
         AlunoDeleteDialogComponent,
         AlunoPopupComponent,
         AlunoDeletePopupComponent,
+        AlunoInscricaoComponent,
     ],
     entryComponents: [
         AlunoComponent,
@@ -41,6 +43,7 @@ const ENTITY_STATES = [
         AlunoPopupComponent,
         AlunoDeleteDialogComponent,
         AlunoDeletePopupComponent,
+        AlunoInscricaoComponent,
     ],
     providers: [
         AlunoService,

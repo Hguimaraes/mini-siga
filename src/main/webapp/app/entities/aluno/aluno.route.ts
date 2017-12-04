@@ -8,6 +8,7 @@ import { AlunoComponent } from './aluno.component';
 import { AlunoDetailComponent } from './aluno-detail.component';
 import { AlunoPopupComponent } from './aluno-dialog.component';
 import { AlunoDeletePopupComponent } from './aluno-delete-dialog.component';
+import { AlunoInscricaoComponent } from './aluno-inscricao.component';
 
 export const alunoRoute: Routes = [
     {
@@ -24,6 +25,14 @@ export const alunoRoute: Routes = [
         data: {
             authorities: ['ROLE_USER'],
             pageTitle: 'minisigaApp.aluno.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    }, {
+        path: 'aluno/inscricao/:id',
+        component: AlunoInscricaoComponent,
+        data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'minisigaApp.aluno.home.inscricao'
         },
         canActivate: [UserRouteAccessService]
     }

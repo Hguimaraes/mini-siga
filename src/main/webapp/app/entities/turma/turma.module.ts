@@ -13,6 +13,8 @@ import {
     TurmaDeleteDialogComponent,
     turmaRoute,
     turmaPopupRoute,
+    TurmaInscricaoPopupComponent,
+    TurmaInscricaoDialogComponent,
 } from './';
 
 const ENTITY_STATES = [
@@ -32,6 +34,8 @@ const ENTITY_STATES = [
         TurmaDeleteDialogComponent,
         TurmaPopupComponent,
         TurmaDeletePopupComponent,
+        TurmaInscricaoDialogComponent,
+        TurmaInscricaoPopupComponent,
     ],
     entryComponents: [
         TurmaComponent,
@@ -39,6 +43,8 @@ const ENTITY_STATES = [
         TurmaPopupComponent,
         TurmaDeleteDialogComponent,
         TurmaDeletePopupComponent,
+        TurmaInscricaoDialogComponent,
+        TurmaInscricaoPopupComponent,
     ],
     providers: [
         TurmaService,

@@ -2,7 +2,7 @@
     <h2>
         <span jhiTranslate="minisigaApp.turma.home.title">Turmas</span>
         <!-- Classes button -->
-        <button class="btn btn-success float-right jh-create-entity create-turma btn-space">
+        <button class="btn btn-success float-right jh-create-entity create-turma btn-space" [routerLink]="['../aluno/inscricao', user.id ]">
             <span class="fa fa-university"></span>
             <span  jhiTranslate="minisigaApp.turma.home.yourClasses">
             Your courses
@@ -51,10 +51,10 @@
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
-                                [routerLink]="['../turma', turma.id]"
+                                [routerLink]="['/', { outlets: { popup: 'turma/'+ turma.id + '/register'} }]"
                                 class="btn btn-success btn-sm">
                             <span class="fa fa-thumbs-o-up"></span>
-                            <span class="hidden-md-down" jhiTranslate="minisigaApp.turma.register">Register</span>
+                            <span class="hidden-md-down" jhiTranslate="minisigaApp.turma.register.main">Register</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['../turma', turma.id ]"

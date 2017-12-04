@@ -19,7 +19,11 @@
             "dre": "Dre",
             "user": "User",
             "aluno": "Aluno",
-            "turmas": "Turmas"
+            "turmas": "Turmas",
+            "inscricao": {
+                "title":"Inscrições de ",
+                "disciplina": "Disciplinas"
+            }
         }
     }
 }

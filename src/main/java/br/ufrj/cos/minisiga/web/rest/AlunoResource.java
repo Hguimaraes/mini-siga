@@ -2,6 +2,7 @@ package br.ufrj.cos.minisiga.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import br.ufrj.cos.minisiga.domain.Aluno;
+import br.ufrj.cos.minisiga.domain.User;
 
 import br.ufrj.cos.minisiga.repository.AlunoRepository;
 import br.ufrj.cos.minisiga.web.rest.util.HeaderUtil;
@@ -125,5 +126,19 @@ public class AlunoResource {
         log.debug("REST request to delete Aluno : {}", id);
         alunoRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
+    }
+
+    /**
+     * GET  /alunos/:id : get the "id" aluno.
+     *
+     * @param id the id of the aluno to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the aluno, or with status 404 (Not Found)
+     */
+    @GetMapping("/alunos/userid/{id}")
+    @Timed
+    public ResponseEntity<Aluno> getAlunoByUserId(@PathVariable Long id) {
+        log.debug("REST request to get Aluno : {}", id);
+        Aluno aluno = alunoRepository.findByUser(id);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(aluno));
     }
 }
