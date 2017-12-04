@@ -28,6 +28,12 @@
                 <a [routerLink]="['/disciplina', turma.disciplina?.id]">{{turma.disciplina?.codigo}}</a>
             </div>
         </dd>
+        <dt><span jhiTranslate="minisigaApp.turma.horario">Horario</span></dt>
+        <dd>
+            <span *ngFor="let horarios of turma.horarios; let last = last">
+                <a [routerLink]="['/horario', horarios?.id ]">{{horarios.descExtenso}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
     </dl>
 
     <button type="submit"
