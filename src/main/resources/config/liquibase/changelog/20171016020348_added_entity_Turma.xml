@@ -49,5 +49,16 @@
 
         <addPrimaryKey columnNames="turmas_id, inscritos_id" tableName="turma_inscritos"/>
         
+        <createTable tableName="turma_horario">
+            <column name="horarios_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="turmas_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="turmas_id, horarios_id" tableName="turma_horario"/>
+        
     </changeSet>
 </databaseChangeLog>

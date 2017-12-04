@@ -14,10 +14,10 @@ import java.util.List;
 @Repository
 public interface TurmaRepository extends JpaRepository<Turma,Long> {
     
-    @Query("select distinct turma from Turma turma left join fetch turma.inscritos")
+    @Query("select distinct turma from Turma turma left join fetch turma.inscritos left join fetch turma.horarios")
     List<Turma> findAllWithEagerRelationships();
 
-    @Query("select turma from Turma turma left join fetch turma.inscritos where turma.id =:id")
+    @Query("select turma from Turma turma left join fetch turma.inscritos left join fetch turma.horarios where turma.id =:id")
     Turma findOneWithEagerRelationships(@Param("id") Long id);
     
 }

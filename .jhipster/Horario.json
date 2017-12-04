@@ -3,11 +3,10 @@
     "relationships": [
         {
             "relationshipType": "many-to-many",
-            "otherEntityRelationshipName": "horario",
             "relationshipName": "turma",
             "otherEntityName": "turma",
-            "otherEntityField": "id",
-            "ownerSide": true
+            "ownerSide": false,
+            "otherEntityRelationshipName": "horario"
         }
     ],
     "fields": [

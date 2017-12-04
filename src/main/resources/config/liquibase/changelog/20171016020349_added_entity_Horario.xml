@@ -42,16 +42,5 @@
         <dropDefaultValue tableName="horario" columnName="hora_inicio" columnDataType="datetime"/>
         <dropDefaultValue tableName="horario" columnName="hora_fim" columnDataType="datetime"/>
         
-        <createTable tableName="horario_turma">
-            <column name="turmas_id" type="bigint">
-                <constraints nullable="false"/>
-            </column>
-            <column name="horarios_id" type="bigint">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-
-        <addPrimaryKey columnNames="horarios_id, turmas_id" tableName="horario_turma"/>
-        
     </changeSet>
 </databaseChangeLog>

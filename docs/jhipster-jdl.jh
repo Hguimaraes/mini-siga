@@ -77,5 +77,5 @@ relationship OneToMany {
 
 relationship ManyToMany {
 	Turma{inscritos} to Aluno{turmas},
-    Horario{turma} to Turma{horario(descExtenso)}
+    Turma{horario(descExtenso)} to Horario{turma}
 }

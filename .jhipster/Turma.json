@@ -30,17 +30,18 @@
             "ownerSide": true
         },
         {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "turma",
+            "relationshipName": "horario",
+            "otherEntityName": "horario",
+            "otherEntityField": "descExtenso",
+            "ownerSide": true
+        },
+        {
             "relationshipType": "many-to-one",
             "relationshipName": "disciplina",
             "otherEntityName": "disciplina",
             "otherEntityField": "codigo"
-        },
-        {
-            "relationshipType": "many-to-many",
-            "relationshipName": "horario",
-            "otherEntityName": "horario",
-            "ownerSide": false,
-            "otherEntityRelationshipName": "turma"
         }
     ],
     "fields": [

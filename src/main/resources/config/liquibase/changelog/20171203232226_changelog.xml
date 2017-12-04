@@ -1,0 +1,34 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hguimaraes (generated)" id="1512350551589-1">
+        <createTable tableName="turma_horario">
+            <column name="turmas_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="horarios_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1512350551589-2">
+        <addPrimaryKey columnNames="turmas_id, horarios_id" tableName="turma_horario"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1512350551589-3">
+        <addUniqueConstraint columnNames="codigo" constraintName="UC_DISCIPLINACODIGO_COL" tableName="disciplina"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1512350551589-4">
+        <addForeignKeyConstraint baseColumnNames="horarios_id" baseTableName="turma_horario" constraintName="FK576tv0iujao5mcfu4fph3k4pl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="horario"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1512350551589-5">
+        <addForeignKeyConstraint baseColumnNames="turmas_id" baseTableName="turma_horario" constraintName="FKd89fdlgpjvngm55ur9v5wo7oe" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="turma"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1512350551589-6">
+        <dropForeignKeyConstraint baseTableName="HORARIO_TURMA" constraintName="FK_HORARIO_TURMA_HORARIOS_ID"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1512350551589-7">
+        <dropForeignKeyConstraint baseTableName="HORARIO_TURMA" constraintName="FK_HORARIO_TURMA_TURMAS_ID"/>
+    </changeSet>
+    <changeSet author="hguimaraes (generated)" id="1512350551589-8">
+        <dropTable tableName="HORARIO_TURMA"/>
+    </changeSet>
+</databaseChangeLog>

@@ -86,7 +86,7 @@ public class HorarioResource {
     @Timed
     public List<Horario> getAllHorarios() {
         log.debug("REST request to get all Horarios");
-        return horarioRepository.findAllWithEagerRelationships();
+        return horarioRepository.findAll();
     }
 
     /**
@@ -99,7 +99,7 @@ public class HorarioResource {
     @Timed
     public ResponseEntity<Horario> getHorario(@PathVariable Long id) {
         log.debug("REST request to get Horario : {}", id);
-        Horario horario = horarioRepository.findOneWithEagerRelationships(id);
+        Horario horario = horarioRepository.findOne(id);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(horario));
     }
 

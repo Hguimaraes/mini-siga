@@ -55,13 +55,15 @@ public class Turma implements Serializable {
                inverseJoinColumns = @JoinColumn(name="inscritos_id", referencedColumnName="id"))
     private Set<Aluno> inscritos = new HashSet<>();
 
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "horario_turma",
+               joinColumns = @JoinColumn(name="turmas_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="horarios_id", referencedColumnName="id"))
+    private Set<Horario> horarios = new HashSet<>();
+
     @ManyToOne
     private Disciplina disciplina;
-
-    @ManyToMany(mappedBy = "turmas")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Horario> horarios = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -185,19 +187,6 @@ public class Turma implements Serializable {
         this.inscritos = alunos;
     }
 
-    public Disciplina getDisciplina() {
-        return disciplina;
-    }
-
-    public Turma disciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
-        return this;
-    }
-
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
-    }
-
     public Set<Horario> getHorarios() {
         return horarios;
     }
@@ -221,6 +210,19 @@ public class Turma implements Serializable {
 
     public void setHorarios(Set<Horario> horarios) {
         this.horarios = horarios;
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public Turma disciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+        return this;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
     }
 
     @Override

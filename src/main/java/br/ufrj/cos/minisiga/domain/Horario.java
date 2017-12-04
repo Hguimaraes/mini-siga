@@ -1,5 +1,6 @@
 package br.ufrj.cos.minisiga.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -45,11 +46,9 @@ public class Horario implements Serializable {
     @Column(name = "desc_extenso", nullable = false)
     private String descExtenso;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "horarios")
+    @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "horario_turma",
-               joinColumns = @JoinColumn(name="horarios_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="turmas_id", referencedColumnName="id"))
     private Set<Turma> turmas = new HashSet<>();
 
     public Long getId() {
