@@ -47,16 +47,16 @@
             </select>
         </div>
         <div class="form-group">
-            <label jhiTranslate="minisigaApp.turma.inscritos" for="field_inscritos">Inscritos</label>
-            <select class="form-control" id="field_inscritos" multiple name="inscritos" [(ngModel)]="turma.inscritos">
-                <option [ngValue]="getSelected(turma.inscritos, alunoOption)" *ngFor="let alunoOption of alunos; trackBy: trackAlunoById">{{alunoOption.id}}</option>
-            </select>
-        </div>
-        <div class="form-group">
             <label jhiTranslate="minisigaApp.turma.disciplina" for="field_disciplina">Disciplina</label>
             <select class="form-control" id="field_disciplina" name="disciplina" [(ngModel)]="turma.disciplina" >
                 <option [ngValue]="null"></option>
                 <option [ngValue]="disciplinaOption.id === turma.disciplina?.id ? turma.disciplina : disciplinaOption" *ngFor="let disciplinaOption of disciplinas; trackBy: trackDisciplinaById">{{disciplinaOption.codigo}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="minisigaApp.turma.horarios" for="field_horarios">Horarios</label>
+            <select class="form-control" id="field_horarios" multiple name="horarios" [(ngModel)]="turma.horarios">
+                <option [ngValue]="getSelected(turma.horarios, horarioOption)" *ngFor="let horarioOption of horarios; trackBy: trackHorarioById">{{horarioOption.descExtenso}}</option>
             </select>
         </div>
     </div>
