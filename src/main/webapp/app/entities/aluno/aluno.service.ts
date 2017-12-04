@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 import { Aluno } from './aluno.model';
+import { Turma } from '../turma/turma.model';
 import { ResponseWrapper, createRequestOption } from '../../shared';
 
 @Injectable()
@@ -34,6 +35,13 @@ export class AlunoService {
 
     findByUserId(id: number): Observable<Aluno> {
         const url = `${this.resourceUrl}/userid/${id}`
+        return this.http.get(url).map((res: Response) => {
+            return res.json();
+        });
+    }
+
+    getAllTurmas(id: number): Observable<Turma[]> {
+        const url = `${this.resourceUrl}/turmas/${id}`
         return this.http.get(url).map((res: Response) => {
             return res.json();
         });

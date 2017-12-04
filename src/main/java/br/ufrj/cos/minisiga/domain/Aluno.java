@@ -43,7 +43,6 @@ public class Aluno implements Serializable {
     private Nota aluno;
 
     @ManyToMany(mappedBy = "inscritos")
-    @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Turma> turmas = new HashSet<>();
 

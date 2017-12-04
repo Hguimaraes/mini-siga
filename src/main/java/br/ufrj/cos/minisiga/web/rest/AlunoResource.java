@@ -1,5 +1,6 @@
 package br.ufrj.cos.minisiga.web.rest;
 
+import br.ufrj.cos.minisiga.domain.Turma;
 import com.codahale.metrics.annotation.Timed;
 import br.ufrj.cos.minisiga.domain.Aluno;
 import br.ufrj.cos.minisiga.domain.User;
@@ -20,6 +21,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
+import java.util.List;
 
 /**
  * REST controller for managing Aluno.
@@ -140,5 +142,18 @@ public class AlunoResource {
         log.debug("REST request to get Aluno : {}", id);
         Aluno aluno = alunoRepository.findByUser(id);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(aluno));
+    }
+
+    /**
+     * GET  /alunos/:id : get the "id" aluno.
+     *
+     * @param id the id of the aluno to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the aluno, or with status 404 (Not Found)
+     */
+    @GetMapping("/alunos/turmas/{id}")
+    @Timed
+    public List<Turma> getAllTurmas(@PathVariable Long id) {
+        log.debug("REST request to get Aluno : {}", id);
+        return alunoRepository.getAllTurmas(id);
     }
 }

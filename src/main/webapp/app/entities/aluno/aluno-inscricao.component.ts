@@ -6,6 +6,8 @@ import { JhiEventManager  } from 'ng-jhipster';
 import { Aluno } from './aluno.model';
 import { AlunoService } from './aluno.service';
 
+import { Turma } from '../turma/turma.model';
+
 @Component({
     selector: 'jhi-aluno-inscricao',
     templateUrl: './aluno-inscricao.component.html'
@@ -13,6 +15,8 @@ import { AlunoService } from './aluno.service';
 export class AlunoInscricaoComponent implements OnInit {
 
     aluno: Aluno;
+    turmas: Turma[];
+
     private subscription: Subscription;
     private eventSubscriber: Subscription;
 
@@ -30,6 +34,9 @@ export class AlunoInscricaoComponent implements OnInit {
             this.alunoService.findByUserId(id).subscribe((val) => {
                 this.aluno = val
                 console.log(this.aluno);
+                this.alunoService.getAllTurmas(this.aluno.id).subscribe(
+                    (t) => {this.turmas = t; console.log(t);}
+                )
             });
         });
     }
