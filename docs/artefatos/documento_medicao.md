@@ -1,6 +1,6 @@
 # Plano de Medição Organizacional
 
-**Versão do Documento:** 1.0 **Data: 12/10/2017**
+**Versão do Documento:** 2.0 **Data: 01/12/2017**
 
 **Participantes do Planejamento da Medição:**
 * Brian Confessor

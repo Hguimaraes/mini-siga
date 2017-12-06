@@ -35,7 +35,7 @@ O objetivo deste documento é de definir claramente, acordado bilateralmente ent
 	| Código | Descrição do Requisito Funcional | Situação | Prioridade |
 	| ----- | ----- | ----- | ----- |
 	| RF01 | O sistema deve permitir que o usuário Funcionário crie uma nova disciplina. | Proposto | Alta |
-	| RF02 | O sistema deve permitir que o usuário Funcionário altere os dados de uma disciplina já cadastrada no sistema, ou a exclua| Proposto | Alta |
+	| RF02 | O sistema deve permitir que o usuário Funcionário altere os dados de uma disciplina já cadastrada no sistema.| Proposto | Alta |
 	| RF03 | O sistema deve permitir que o usuário Funcionário crie uma turma de uma determinada disciplina. | Proposto | Alta |
 	| RF04 | O sistema deve permitir que o usuário Funcionário altere os dados de uma turma existente. | Proposto | Alta |
 	| RF05 | O sistema deve permitir que uma turma cujas aulas não tenham sido iniciadas seja excluídas por um usuário Funcionário. | Proposto | Alta |

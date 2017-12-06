@@ -13,7 +13,7 @@
 
 	A estrutrura analítica do projeto adotado pela equipe segue o seguinte organograma:
 
-	![alt text](imgs/eap.jpg "EAP do projeto")
+	![alt text](imgs/eap_v2.jpg "EAP do projeto")
 
 2. Definições
 
